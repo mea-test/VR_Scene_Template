@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://Scenes/Components/Tree.tscn" type="PackedScene" id=1]
 [ext_resource path="res://addons/godot-openxr/scenes/first_person_controller_vr.tscn" type="PackedScene" id=2]
@@ -10,6 +10,10 @@
 [ext_resource path="res://addons/godot-xr-tools/functions/movement_jump.tscn" type="PackedScene" id=8]
 [ext_resource path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/UI.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Audio/Adeline Yeo (HP) - With Renegade El Rey Beats HipHop HiHat Music Collaboration.mp3" type="AudioStream" id=11]
+[ext_resource path="res://addons/godot-xr-tools/functions/movement_turn.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Audio/Jump 15.wav" type="AudioStream" id=13]
+[ext_resource path="res://Scripts/JumpSound.gd" type="Script" id=14]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 30, 1, 30 )
@@ -19,6 +23,20 @@ size = Vector3( 60, 2, 60 )
 
 [sub_resource type="SpatialMaterial" id=3]
 albedo_color = Color( 0.533333, 0.403922, 0.286275, 1 )
+
+[sub_resource type="CubeMesh" id=13]
+size = Vector3( 60, 2, 4 )
+
+[sub_resource type="OpenSimplexNoise" id=14]
+
+[sub_resource type="NoiseTexture" id=15]
+height = 1024
+seamless = true
+noise = SubResource( 14 )
+
+[sub_resource type="SpatialMaterial" id=16]
+albedo_color = Color( 0.231373, 0.545098, 0.698039, 1 )
+albedo_texture = SubResource( 15 )
 
 [sub_resource type="BoxShape" id=4]
 extents = Vector3( 1, 4, 1 )
@@ -58,6 +76,20 @@ shape = SubResource( 1 )
 [node name="MeshInstance" type="MeshInstance" parent="Ground"]
 mesh = SubResource( 2 )
 material/0 = SubResource( 3 )
+
+[node name="River" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 27.5714 )
+
+[node name="MeshInstance" type="MeshInstance" parent="River"]
+mesh = SubResource( 13 )
+material/0 = SubResource( 16 )
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="River"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.02794, -1.92674 )
+stream = ExtResource( 11 )
+autoplay = true
+max_distance = 30.0
+emission_angle_enabled = true
 
 [node name="Trees" type="Node" parent="."]
 
@@ -134,23 +166,29 @@ max_slope = 1.0
 [node name="RightHandController" parent="FPController" index="3"]
 visible = true
 
-[node name="MeshInstance" type="MeshInstance" parent="FPController/RightHandController" index="0"]
+[node name="JumpSound" type="AudioStreamPlayer3D" parent="FPController/RightHandController" index="0"]
+stream = ExtResource( 13 )
+script = ExtResource( 14 )
+
+[node name="MeshInstance" type="MeshInstance" parent="FPController/RightHandController" index="1"]
 mesh = SubResource( 12 )
 
-[node name="MovementDirect" parent="FPController/RightHandController" index="1" instance=ExtResource( 3 )]
+[node name="MovementDirect" parent="FPController/RightHandController" index="2" instance=ExtResource( 3 )]
 enabled = true
 order = 10
 max_speed = 10.0
-strafe = true
+strafe = false
 
-[node name="MovementJump" parent="FPController/RightHandController" index="2" instance=ExtResource( 8 )]
+[node name="MovementJump" parent="FPController/RightHandController" index="3" instance=ExtResource( 8 )]
 jump_button_id = 15
 
-[node name="MovementFlight" parent="FPController/RightHandController" index="3" instance=ExtResource( 6 )]
+[node name="MovementFlight" parent="FPController/RightHandController" index="4" instance=ExtResource( 6 )]
 
-[node name="FunctionPointer" parent="FPController/RightHandController" index="4" instance=ExtResource( 5 )]
+[node name="FunctionPointer" parent="FPController/RightHandController" index="5" instance=ExtResource( 5 )]
 show_laser = 2
 active_button = 2
+
+[node name="MovementTurn" parent="FPController/RightHandController" index="6" instance=ExtResource( 12 )]
 
 [node name="PlayerBody" parent="FPController" instance=ExtResource( 4 )]
 
@@ -161,5 +199,7 @@ shadow_enabled = true
 [node name="Viewport2Din3D" parent="." instance=ExtResource( 9 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.68001, -3.84059 )
 scene = ExtResource( 10 )
+
+[connection signal="button_pressed" from="FPController/RightHandController" to="FPController/RightHandController/JumpSound" method="_on_RightHandController_button_pressed"]
 
 [editable path="FPController"]
