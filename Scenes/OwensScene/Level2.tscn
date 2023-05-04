@@ -63,7 +63,7 @@ material/0 = SubResource( 3 )
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -26.5317, 0, 25.9242 )
 
 [node name="Tree5" parent="Trees" instance=ExtResource( 10 )]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -16.0535, 6.6851, 20.3199 )
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -11.9873, -0.186423, -20.184 )
 
 [node name="Tree6" parent="Trees" instance=ExtResource( 10 )]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 11.1594, 0.817873, 20.3199 )
