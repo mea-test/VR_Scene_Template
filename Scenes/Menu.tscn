@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://DonaldoScenes/ruins4Godot.tscn" type="PackedScene" id=1]
 [ext_resource path="res://addons/godot-openxr/scenes/first_person_controller_vr.tscn" type="PackedScene" id=2]
@@ -27,6 +27,8 @@
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 32.156, 1, 32.4807 )
+
+[sub_resource type="BoxShape" id=13]
 
 [sub_resource type="CubeMesh" id=11]
 size = Vector3( 0.2, 0.2, 0.2 )
@@ -99,6 +101,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 36.7601, 0 )
 transform = Transform( 0.294484, 0, 0, 0, 0.0311539, 0, 0, 0, 0.294484, 0, -6.10161, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Ground/Stairs/StaticBody"]
+shape = SubResource( 13 )
 
 [node name="FPController" parent="." instance=ExtResource( 2 )]
 transform = Transform( -0.874314, -7.0376e-05, 0.48536, 0.000199253, 1, 0.000503961, -0.48536, 0.000537332, -0.874314, 11.7259, 1.8145, -17.4903 )
