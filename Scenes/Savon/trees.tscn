@@ -1,8 +1,9 @@
 [gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://source/trees.fbx" type="PackedScene" id=1]
-[ext_resource path="res://textures/branch1Normal.png" type="Texture" id=2]
-[ext_resource path="res://textures/bark1Color.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Savon/source/trees.fbx" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Savon/textures/branch1Normal.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Savon/textures/bark1Color.png" type="Texture" id=3]
+
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_texture = ExtResource( 2 )
