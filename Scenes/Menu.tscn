@@ -29,6 +29,7 @@
 extents = Vector3( 32.156, 1, 32.4807 )
 
 [sub_resource type="BoxShape" id=13]
+extents = Vector3( 10.0715, 13.9013, 6.23012 )
 
 [sub_resource type="CubeMesh" id=11]
 size = Vector3( 0.2, 0.2, 0.2 )
@@ -98,9 +99,38 @@ shape = SubResource( 1 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 36.7601, 0 )
 
 [node name="StaticBody" type="StaticBody" parent="Ground/Stairs"]
-transform = Transform( 0.294484, 0, 0, 0, 0.0311539, 0, 0, 0, 0.294484, 0, -6.10161, 0 )
+transform = Transform( 0.294484, 0, 0, 0, 0.00668938, 0, 0, 0, 0.0691403, 0, -7.67632, -3.65315 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Ground/Stairs/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.82675, -99.238, 8.76873 )
+shape = SubResource( 13 )
+
+[node name="StaticBody2" type="StaticBody" parent="Ground/Stairs"]
+transform = Transform( 0.294484, 0, 0, 0, 0.00668938, 0, 0, 0, 0.0691403, 0, -7.22796, -3.13372 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Ground/Stairs/StaticBody2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 3.72529e-09, 1, 1.84179, -89.1521, 11.2277 )
+shape = SubResource( 13 )
+
+[node name="StaticBody3" type="StaticBody" parent="Ground/Stairs"]
+transform = Transform( 0.294484, 0, 0, 0, 0.00668938, 0, 0, 0, 0.0691403, 0, -6.68753, -2.63277 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Ground/Stairs/StaticBody3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.84179, -124.436, 14.0295 )
+shape = SubResource( 13 )
+
+[node name="StaticBody4" type="StaticBody" parent="Ground/Stairs"]
+transform = Transform( 0.294484, 0, 0, 0, 0.00668938, 0, 0, 0, 0.0691403, 0, -6.45185, -1.70483 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Ground/Stairs/StaticBody4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.82675, -99.238, 8.76873 )
+shape = SubResource( 13 )
+
+[node name="StaticBody5" type="StaticBody" parent="Ground/Stairs"]
+transform = Transform( 0.294484, 0, 0, 0, 0.00668938, 0, 0, 0, 0.0691403, 0, -6.14539, -1.03713 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Ground/Stairs/StaticBody5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.82675, -99.238, 8.76873 )
 shape = SubResource( 13 )
 
 [node name="FPController" parent="." instance=ExtResource( 2 )]
