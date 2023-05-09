@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=2]
+[gd_scene load_steps=97 format=2]
 
 [ext_resource path="res://addons/godot-openxr/scenes/first_person_controller_vr.tscn" type="PackedScene" id=1]
 [ext_resource path="res://addons/godot-xr-tools/functions/function_teleport.tscn" type="PackedScene" id=2]
@@ -16,10 +16,12 @@
 [ext_resource path="res://addons/godot-xr-tools/objects/pickable.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Scenes/MWgame/textures/exerciseball_1.png" type="Texture" id=15]
 [ext_resource path="res://Scenes/MWgame/sounds/255851__kwahmah_02__bangkokmeterologicalradio.wav" type="AudioStream" id=16]
-[ext_resource path="res://addons/godot-xr-tools/hands/scenes/highpoly/left_fullglove_hand.tscn" type="PackedScene" id=18]
-[ext_resource path="res://addons/godot-xr-tools/hands/scenes/highpoly/right_fullglove_hand.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Scenes/MWgame/textures/fenceglass.tres" type="Material" id=17]
+[ext_resource path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_hand_low.tscn" type="PackedScene" id=18]
+[ext_resource path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_hand_low.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Scenes/MWgame/textures/glassbottle_shine.tres" type="Material" id=20]
 [ext_resource path="res://addons/godot-xr-tools/functions/movement_turn.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Scenes/MWgame/textures/office_spaceinspirational_poster.png" type="Texture" id=22]
 
 [sub_resource type="CubeMesh" id=3]
 size = Vector3( 0.2, 0.2, 0.2 )
@@ -31,11 +33,32 @@ size = Vector3( 0.2, 0.2, 0.2 )
 radius = 0.2
 height = 1.4
 
+[sub_resource type="CylinderMesh" id=64]
+top_radius = 0.1
+bottom_radius = 0.1
+height = 1.0
+
+[sub_resource type="CylinderShape" id=65]
+height = 1.0
+radius = 0.1
+
+[sub_resource type="CubeMesh" id=66]
+size = Vector3( 16.2, 0.7, 0.1 )
+
+[sub_resource type="BoxShape" id=68]
+extents = Vector3( 8.1, 0.35, 0.05 )
+
+[sub_resource type="CubeMesh" id=69]
+size = Vector3( 0.1, 0.7, 15.25 )
+
+[sub_resource type="BoxShape" id=70]
+extents = Vector3( 0.05, 0.35, 7.625 )
+
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 6, 0.5, 5.25 )
 
 [sub_resource type="CubeMesh" id=2]
-size = Vector3( 12, 1, 10.5 )
+size = Vector3( 17, 1, 16 )
 
 [sub_resource type="SpatialMaterial" id=6]
 albedo_texture = ExtResource( 8 )
@@ -56,6 +79,18 @@ extents = Vector3( 5, 0.25, 5 )
 
 [sub_resource type="CubeMesh" id=11]
 size = Vector3( 10, 0.5, 10 )
+
+[sub_resource type="CubeMesh" id=62]
+size = Vector3( 12, 0.5, 10.5 )
+
+[sub_resource type="BoxShape" id=63]
+extents = Vector3( 6, 0.25, 5.25 )
+
+[sub_resource type="PlaneMesh" id=71]
+size = Vector2( 2.25, 1.41 )
+
+[sub_resource type="SpatialMaterial" id=72]
+albedo_texture = ExtResource( 22 )
 
 [sub_resource type="CubeMesh" id=12]
 size = Vector3( 12, 1, 0.25 )
@@ -248,6 +283,30 @@ extents = Vector3( 0.05, 0.4, 0.3 )
 [sub_resource type="SpatialMaterial" id=36]
 albedo_color = Color( 0.109804, 0.109804, 0.109804, 1 )
 
+[sub_resource type="CylinderMesh" id=73]
+top_radius = 0.05
+bottom_radius = 0.05
+height = 0.3
+
+[sub_resource type="SpatialMaterial" id=75]
+albedo_color = Color( 0.607843, 0.6, 0.6, 1 )
+
+[sub_resource type="CylinderShape" id=76]
+height = 0.3
+radius = 0.05
+
+[sub_resource type="CylinderMesh" id=74]
+top_radius = 0.1
+bottom_radius = 0.05
+height = 0.1
+
+[sub_resource type="SpatialMaterial" id=77]
+albedo_color = Color( 0.607843, 0.6, 0.6, 1 )
+
+[sub_resource type="CylinderShape" id=78]
+height = 0.06
+radius = 0.1
+
 [node name="Spatial" type="Spatial"]
 
 [node name="Building" type="Spatial" parent="."]
@@ -255,6 +314,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.75, 0 )
 
 [node name="FPController" parent="Building" instance=ExtResource( 1 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -2.74297, -4 )
+visible = false
 
 [node name="ARVRCamera" parent="Building/FPController" index="1"]
 far = 1000.0
@@ -279,7 +339,7 @@ max_slope = 1.0
 grab_distance = 0.1
 ranged_distance = 1.0
 
-[node name="LeftHand" parent="Building/FPController/LeftHandController" index="4" instance=ExtResource( 18 )]
+[node name="LeftHand" parent="Building/FPController/LeftHandController" index="4" instance=ExtResource( 19 )]
 
 [node name="RightHandController" parent="Building/FPController" index="3"]
 visible = true
@@ -292,6 +352,7 @@ mesh = SubResource( 4 )
 smooth_turn_speed = 4.0
 
 [node name="MovementJump" parent="Building/FPController/RightHandController" index="2" instance=ExtResource( 4 )]
+order = 30
 jump_button_id = 15
 
 [node name="MovementFlight" parent="Building/FPController/RightHandController" index="3" instance=ExtResource( 6 )]
@@ -304,13 +365,91 @@ active_button = 2
 grab_distance = 0.1
 ranged_distance = 1.0
 
-[node name="RightHand" parent="Building/FPController/RightHandController" index="6" instance=ExtResource( 19 )]
+[node name="RightHand" parent="Building/FPController/RightHandController" index="6" instance=ExtResource( 18 )]
 
 [node name="PlayerBody" parent="Building/FPController" instance=ExtResource( 5 )]
 
 [node name="CollisionShape" type="CollisionShape" parent="Building/FPController/PlayerBody"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.8, 0 )
 shape = SubResource( 5 )
+
+[node name="exterior" type="Spatial" parent="Building"]
+
+[node name="Pole" type="StaticBody" parent="Building/exterior"]
+transform = Transform( 1, 0, 0, 0, 1.25, 0, 0, 0, 1, -8.1, -2.12, -7.6 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/exterior/Pole"]
+mesh = SubResource( 64 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/exterior/Pole"]
+shape = SubResource( 65 )
+
+[node name="Pole2" type="StaticBody" parent="Building/exterior"]
+transform = Transform( 1, 0, 0, 0, 1.25, 0, 0, 0, 1, 8.1, -2.12, -7.6 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/exterior/Pole2"]
+mesh = SubResource( 64 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/exterior/Pole2"]
+shape = SubResource( 65 )
+
+[node name="Pole3" type="StaticBody" parent="Building/exterior"]
+transform = Transform( 1, 0, 0, 0, 1.25, 0, 0, 0, 1, -8.1, -2.12, 7.6 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/exterior/Pole3"]
+mesh = SubResource( 64 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/exterior/Pole3"]
+shape = SubResource( 65 )
+
+[node name="Pole4" type="StaticBody" parent="Building/exterior"]
+transform = Transform( 1, 0, 0, 0, 1.25, 0, 0, 0, 1, 8.1, -2.12, 7.6 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/exterior/Pole4"]
+mesh = SubResource( 64 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/exterior/Pole4"]
+shape = SubResource( 65 )
+
+[node name="glassfence" type="StaticBody" parent="Building/exterior"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, -7.6 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/exterior/glassfence"]
+mesh = SubResource( 66 )
+material/0 = ExtResource( 17 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/exterior/glassfence"]
+shape = SubResource( 68 )
+
+[node name="glassfence2" type="StaticBody" parent="Building/exterior"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 7.6 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/exterior/glassfence2"]
+mesh = SubResource( 66 )
+material/0 = ExtResource( 17 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/exterior/glassfence2"]
+shape = SubResource( 68 )
+
+[node name="glassfence 3" type="StaticBody" parent="Building/exterior"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.1, -2, 0 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/exterior/glassfence 3"]
+mesh = SubResource( 69 )
+material/0 = ExtResource( 17 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/exterior/glassfence 3"]
+shape = SubResource( 70 )
+
+[node name="glassfence 4" type="StaticBody" parent="Building/exterior"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.1, -2, 0 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/exterior/glassfence 4"]
+mesh = SubResource( 69 )
+material/0 = ExtResource( 17 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/exterior/glassfence 4"]
+shape = SubResource( 70 )
 
 [node name="maininterior" type="Spatial" parent="Building"]
 
@@ -360,6 +499,23 @@ shape = SubResource( 10 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Building/maininterior/Ceiling"]
 mesh = SubResource( 11 )
+
+[node name="Roof" type="StaticBody" parent="Building/maininterior"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/maininterior/Roof"]
+mesh = SubResource( 62 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/maininterior/Roof"]
+shape = SubResource( 63 )
+
+[node name="poster" type="StaticBody" parent="Building/maininterior"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.999, 0.446, -1.602 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/maininterior/poster"]
+transform = Transform( -4.37114e-08, 1, 0, 4.37114e-08, 1.91069e-15, -1, -1, -4.37114e-08, -4.37114e-08, 0, -1, 0 )
+mesh = SubResource( 71 )
+material/0 = SubResource( 72 )
 
 [node name="Wall with window" type="Spatial" parent="Building"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.75, 0 )
@@ -1159,6 +1315,38 @@ material/0 = SubResource( 36 )
 [node name="tablelegcollision 2" type="CollisionShape" parent="Building/Props/Pickable table 7"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0 )
 shape = SubResource( 33 )
+
+[node name="Pickable Flashlight" parent="Building/Props" instance=ExtResource( 14 )]
+transform = Transform( 1, 0, 0, 0, 2.98023e-08, -1, 0, 1, 2.98023e-08, 0, 0, 0 )
+gravity_scale = 0.1
+
+[node name="flashlight base" type="MeshInstance" parent="Building/Props/Pickable Flashlight"]
+mesh = SubResource( 73 )
+material/0 = SubResource( 75 )
+
+[node name="Collision base" type="CollisionShape" parent="Building/Props/Pickable Flashlight"]
+shape = SubResource( 76 )
+
+[node name="flashlight top" type="MeshInstance" parent="Building/Props/Pickable Flashlight"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0 )
+mesh = SubResource( 74 )
+material/0 = SubResource( 77 )
+
+[node name="main SpotLight" type="SpotLight" parent="Building/Props/Pickable Flashlight"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.286, 0 )
+light_energy = 2.231
+spot_range = 3.121
+spot_angle = 57.59
+
+[node name="SpotLight2" type="SpotLight" parent="Building/Props/Pickable Flashlight"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.356, 0 )
+light_energy = 12.413
+light_indirect_energy = 1.336
+spot_range = 0.171
+
+[node name="CollisionShape2" type="CollisionShape" parent="Building/Props/Pickable Flashlight"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.22, 0 )
+shape = SubResource( 78 )
 
 [node name="AllSkyFree_AnotherPlanet" parent="." instance=ExtResource( 11 )]
 
