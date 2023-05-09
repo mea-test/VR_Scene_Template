@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://addons/godot-xr-tools/functions/movement_turn.tscn" type="PackedScene" id=1]
 [ext_resource path="res://addons/godot-xr-tools/functions/movement_jump.tscn" type="PackedScene" id=2]
@@ -24,18 +24,26 @@
 [ext_resource path="res://DonaldoScenes/ruins4Godot_Cube003.mesh" type="ArrayMesh" id=22]
 [ext_resource path="res://DonaldoScenes/ruins4Godot_Cylinder.mesh" type="ArrayMesh" id=23]
 [ext_resource path="res://Scenes/New_enviroment.tres" type="Environment" id=24]
+[ext_resource path="res://DonaldoScenes/Flame.png" type="Texture" id=25]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 32.156, 1, 32.4807 )
 
 [sub_resource type="BoxShape" id=13]
-extents = Vector3( 10.0715, 13.9013, 6.23012 )
+extents = Vector3( 3.39961, 0.24317, 2.18882 )
 
 [sub_resource type="CubeMesh" id=11]
 size = Vector3( 0.2, 0.2, 0.2 )
 
 [sub_resource type="CubeMesh" id=12]
 size = Vector3( 0.2, 0.2, 0.2 )
+
+[sub_resource type="SpatialMaterial" id=16]
+flags_transparent = true
+albedo_texture = ExtResource( 25 )
+
+[sub_resource type="QuadMesh" id=15]
+material = SubResource( 16 )
 
 [node name="Menu" type="Node"]
 
@@ -99,10 +107,9 @@ shape = SubResource( 1 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 36.7601, 0 )
 
 [node name="StaticBody" type="StaticBody" parent="Ground/Stairs"]
-transform = Transform( 0.294484, 0, 0, 0, 0.00668938, 0, 0, 0, 0.0691403, 0, -7.67632, -3.65315 )
+transform = Transform( 1, 0, 0, 0, 0.794934, 0.606696, 0, -0.606696, 0.794934, 0.323653, -8.12971, -2.61404 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Ground/Stairs/StaticBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.82675, -99.238, 8.76873 )
 shape = SubResource( 13 )
 
 [node name="StaticBody2" type="StaticBody" parent="Ground/Stairs"]
@@ -147,7 +154,6 @@ visible = true
 mesh = SubResource( 11 )
 
 [node name="FunctionTeleport" parent="FPController/LeftHandController" index="1" instance=ExtResource( 7 )]
-transform = Transform( -0.997546, 0.000686041, -0.0700351, 0.000665734, 1, 0.000313185, 0.0700353, 0.000265769, -0.997546, 0.570225, 0.405986, -3.86046 )
 max_slope = 1.0
 
 [node name="MovementTurn" parent="FPController/LeftHandController" index="2" instance=ExtResource( 1 )]
@@ -237,6 +243,11 @@ transform = Transform( 1, 1.39473e-06, 2.40806e-05, -3.38276e-06, 0.996575, 0.08
 
 [node name="torch" parent="torch" instance=ExtResource( 9 )]
 transform = Transform( 0.21486, -0.963286, -0.160979, 0.973305, 0.224819, -0.0462233, 0.0807174, -0.146751, 0.985879, 2.37109, -5.49481, -19.1594 )
+
+[node name="Particles" type="Particles" parent="torch"]
+preprocess = 8.19
+randomness = 0.17
+draw_pass_1 = SubResource( 15 )
 
 [node name="foliage" type="MeshInstance" parent="."]
 transform = Transform( 0.997943, -0.06315, 0.0110782, 0.0641143, 0.982932, -0.172433, 0, 0.172789, 0.984959, 8.05998, 0.760594, -13.0929 )
