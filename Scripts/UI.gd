@@ -20,3 +20,6 @@ func _on_MorgunButton_pressed():
 
 func _on_TestOwenScene_pressed():
 	get_tree().change_scene("res://Scenes/MWgame/mw_test2.tscn")
+
+func _on_DonaldoButton_pressed():
+	get_tree().change_scene("res://Scenes/DonaldoScene.tscn")
