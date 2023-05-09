@@ -55,7 +55,7 @@ size = Vector3( 0.1, 0.7, 15.25 )
 extents = Vector3( 0.05, 0.35, 7.625 )
 
 [sub_resource type="BoxShape" id=1]
-extents = Vector3( 6, 0.5, 5.25 )
+extents = Vector3( 8.5, 0.5, 8 )
 
 [sub_resource type="CubeMesh" id=2]
 size = Vector3( 17, 1, 16 )
@@ -314,7 +314,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.75, 0 )
 
 [node name="FPController" parent="Building" instance=ExtResource( 1 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -2.74297, -4 )
-visible = false
 
 [node name="ARVRCamera" parent="Building/FPController" index="1"]
 far = 1000.0
