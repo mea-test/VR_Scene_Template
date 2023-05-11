@@ -218,6 +218,7 @@ show_laser = 2
 active_button = 2
 
 [node name="FunctionPickup" parent="FPController/RightHandController" index="2" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 2.91038e-11, -2.98023e-08, 2.91038e-11, 1, -0.0309038, 0.0503204, -0.103777 )
 ranged_distance = 10.0
 ranged_angle = 10.0
 
@@ -286,7 +287,7 @@ mesh = ExtResource( 19 )
 transform = Transform( 1, 1.39473e-06, 2.40806e-05, -3.38276e-06, 0.996575, 0.0826907, -2.38826e-05, -0.0826907, 0.996575, 2.77629, 8.21686, 3.9818 )
 
 [node name="Pickable" parent="torch" instance=ExtResource( 27 )]
-transform = Transform( 0.21486, -0.963286, -0.160979, 0.973307, 0.224819, -0.0462235, 0.0807175, -0.146751, 0.985879, 1.79106, -5.4271, -19.9618 )
+transform = Transform( 0.21486, -0.963286, -0.160979, 0.973308, 0.22482, -0.0462235, 0.0807175, -0.146751, 0.985879, 1.79105, -5.45537, -19.6212 )
 
 [node name="Particles" type="Particles" parent="torch/Pickable"]
 transform = Transform( 0.0579027, -0.0200248, -0.000230797, 0.00331222, 0.342277, -0.0173746, 0.000554765, 0.0464882, 0.127824, 0.0281999, 0.243605, -0.0738678 )
