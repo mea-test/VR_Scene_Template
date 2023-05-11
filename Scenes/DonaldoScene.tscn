@@ -301,7 +301,7 @@ process_material = SubResource( 17 )
 draw_pass_1 = SubResource( 19 )
 
 [node name="SpotLight" type="SpotLight" parent="torch/Pickable"]
-transform = Transform( -0.218149, -0.180983, 0.958984, 0.937487, -0.311898, 0.154395, 0.271164, 0.932715, 0.237709, -0.138326, 0.737665, 0.392644 )
+transform = Transform( -0.923281, 0.0248534, 0.383309, 0.343517, -0.3931, 0.852917, 0.171877, 0.919155, 0.354406, -0.0523005, 1.81825, 0.594497 )
 light_color = Color( 1, 0.4, 0, 1 )
 light_energy = 7.399
 light_indirect_energy = 0.791
