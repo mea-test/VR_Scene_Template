@@ -23,3 +23,7 @@ func _on_TestOwenScene_pressed():
 
 func _on_DonaldoButton_pressed():
 	get_tree().change_scene("res://Scenes/DonaldoScene.tscn")
+
+
+func _on_SavonButton_pressed():
+	get_tree().change_scene("res://Scenes/Savon/SavonScene.tscn")

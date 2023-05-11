@@ -381,7 +381,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Quest Test Project"
-run/main_scene="res://Scenes/DonaldoScene.tscn"
+run/main_scene="res://Scenes/Menu.tscn"
 
 [autoload]
 
@@ -406,5 +406,4 @@ common/enable_pause_aware_picking=true
 [rendering]
 
 vram_compression/import_etc=true
-vram_compression/import_etc2=false
 environment/default_environment="res://Scenes/New_enviroment.tres"

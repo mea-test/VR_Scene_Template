@@ -15,9 +15,9 @@ anchor_bottom = 1.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/CenterContainer"]
 margin_left = 436.0
-margin_top = 242.0
+margin_top = 230.0
 margin_right = 587.0
-margin_bottom = 358.0
+margin_bottom = 370.0
 
 [node name="Level1Button" type="Button" parent="ColorRect/CenterContainer/VBoxContainer"]
 margin_right = 151.0
@@ -36,20 +36,27 @@ margin_right = 151.0
 margin_bottom = 68.0
 text = "Load Donaldo's Scene"
 
-[node name="Back to Menu" type="Button" parent="ColorRect/CenterContainer/VBoxContainer"]
+[node name="SavonButton" type="Button" parent="ColorRect/CenterContainer/VBoxContainer"]
 margin_top = 72.0
 margin_right = 151.0
 margin_bottom = 92.0
-text = "Back to Menu"
+text = "Load Savon's Scene"
 
-[node name="Quit" type="Button" parent="ColorRect/CenterContainer/VBoxContainer"]
+[node name="Back to Menu" type="Button" parent="ColorRect/CenterContainer/VBoxContainer"]
 margin_top = 96.0
 margin_right = 151.0
 margin_bottom = 116.0
+text = "Back to Menu"
+
+[node name="Quit" type="Button" parent="ColorRect/CenterContainer/VBoxContainer"]
+margin_top = 120.0
+margin_right = 151.0
+margin_bottom = 140.0
 text = "Quit"
 
 [connection signal="pressed" from="ColorRect/CenterContainer/VBoxContainer/Level1Button" to="." method="_on_Level1Button_pressed"]
 [connection signal="pressed" from="ColorRect/CenterContainer/VBoxContainer/MorgunButton" to="." method="_on_MorgunButton_pressed"]
 [connection signal="pressed" from="ColorRect/CenterContainer/VBoxContainer/DonaldoButton" to="." method="_on_DonaldoButton_pressed"]
+[connection signal="pressed" from="ColorRect/CenterContainer/VBoxContainer/SavonButton" to="." method="_on_SavonButton_pressed"]
 [connection signal="pressed" from="ColorRect/CenterContainer/VBoxContainer/Back to Menu" to="." method="_on_Back_to_Menu_pressed"]
 [connection signal="pressed" from="ColorRect/CenterContainer/VBoxContainer/Quit" to="." method="_on_Quit_pressed"]

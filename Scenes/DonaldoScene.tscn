@@ -45,7 +45,7 @@ albedo_texture = ExtResource( 25 )
 [sub_resource type="QuadMesh" id=15]
 material = SubResource( 16 )
 
-[node name="Menu" type="Node"]
+[node name="Menu2" type="Node"]
 
 [node name="rock" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.9438, 1.05787, -11.9147 )
