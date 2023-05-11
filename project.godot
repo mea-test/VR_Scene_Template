@@ -179,16 +179,12 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/godot-xr-tools/functions/movement_flight.gd"
 }, {
-
-"base": "XRToolsMovementProvider",
-
+"base": "Reference",
 "class": "XRToolsMovementFootstep",
 "language": "GDScript",
 "path": "res://addons/godot-xr-tools/functions/movement_footstep.gd"
 }, {
-
-"base": "XRToolsMovementProvider",
-
+"base": "Reference",
 "class": "XRToolsMovementGlide",
 "language": "GDScript",
 "path": "res://addons/godot-xr-tools/functions/movement_glide.gd"
@@ -223,16 +219,12 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/godot-xr-tools/functions/movement_turn.gd"
 }, {
-
-"base": "XRToolsMovementProvider",
-
+"base": "Reference",
 "class": "XRToolsMovementWallWalk",
 "language": "GDScript",
 "path": "res://addons/godot-xr-tools/functions/movement_wall_walk.gd"
 }, {
-
-"base": "XRToolsMovementProvider",
-
+"base": "Reference",
 "class": "XRToolsMovementWind",
 "language": "GDScript",
 "path": "res://addons/godot-xr-tools/functions/movement_wind.gd"
@@ -242,14 +234,12 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/godot-xr-tools/hands/physics_hand.gd"
 }, {
-"base": "Reference",
+"base": "RigidBody",
 "class": "XRToolsPickable",
 "language": "GDScript",
 "path": "res://addons/godot-xr-tools/objects/pickable.gd"
 }, {
-
-"base": "KinematicBody",
-
+"base": "Reference",
 "class": "XRToolsPlayerBody",
 "language": "GDScript",
 "path": "res://addons/godot-xr-tools/player/player_body.gd"
@@ -259,23 +249,17 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/godot-xr-tools/player/poke/poke.gd"
 }, {
-
-"base": "Node",
-
+"base": "Reference",
 "class": "XRToolsResourceQueue",
 "language": "GDScript",
 "path": "res://addons/godot-xr-tools/assets/resource_queue/resource_queue.gd"
 }, {
-
-"base": "Node",
-
+"base": "Reference",
 "class": "XRToolsReturnToSnapZone",
 "language": "GDScript",
 "path": "res://addons/godot-xr-tools/objects/return_to_snap_zone.gd"
 }, {
-
-"base": "Spatial",
-
+"base": "Reference",
 "class": "XRToolsSceneBase",
 "language": "GDScript",
 "path": "res://addons/godot-xr-tools/staging/scene_base.gd"
@@ -289,21 +273,6 @@ _global_script_classes=[ {
 "class": "XRToolsStaging",
 "language": "GDScript",
 "path": "res://addons/godot-xr-tools/staging/staging.gd"
-}, {
-"base": "Node",
-"class": "XRToolsStartXR",
-"language": "GDScript",
-"path": "res://addons/godot-xr-tools/xr/start_xr.gd"
-}, {
-"base": "Node",
-"class": "XRToolsSurfaceAudio",
-"language": "GDScript",
-"path": "res://addons/godot-xr-tools/audio/surface_audio.gd"
-}, {
-"base": "Resource",
-"class": "XRToolsSurfaceAudioType",
-"language": "GDScript",
-"path": "res://addons/godot-xr-tools/audio/surface_audio_type.gd"
 }, {
 "base": "Reference",
 "class": "XRToolsStartXR",
@@ -395,17 +364,13 @@ _global_script_class_icons={
 "XRToolsPlayerBody": "",
 "XRToolsPoke": "",
 "XRToolsResourceQueue": "",
-
-"XRToolsReturnToSnapZone": "res://addons/godot-xr-tools/editor/icons/hand.svg",
-
+"XRToolsReturnToSnapZone": "",
 "XRToolsSceneBase": "",
 "XRToolsSnapZone": "",
 "XRToolsStaging": "",
 "XRToolsStartXR": "",
-
-"XRToolsSurfaceAudio": "res://addons/godot-xr-tools/editor/icons/foot.svg",
-"XRToolsSurfaceAudioType": "res://addons/godot-xr-tools/editor/icons/body.svg",
-
+"XRToolsSurfaceAudio": "",
+"XRToolsSurfaceAudioType": "",
 "XRToolsVelocityAverager": "",
 "XRToolsVelocityAveragerLinear": "",
 "XRToolsVignette": "",
@@ -440,7 +405,6 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
-quality/driver/driver_name="GLES2"
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
 environment/default_environment="res://Scenes/New_enviroment.tres"
