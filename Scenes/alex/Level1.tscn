@@ -1,0 +1,193 @@
+[gd_scene load_steps=29 format=2]
+
+[ext_resource path="res://Scenes/UI.tscn" type="PackedScene" id=1]
+[ext_resource path="res://addons/godot-xr-tools/functions/function_teleport.tscn" type="PackedScene" id=2]
+[ext_resource path="res://addons/godot-openxr/scenes/first_person_controller_vr.tscn" type="PackedScene" id=3]
+[ext_resource path="res://addons/godot-xr-tools/functions/movement_direct.tscn" type="PackedScene" id=4]
+[ext_resource path="res://addons/godot-xr-tools/player/player_body.tscn" type="PackedScene" id=5]
+[ext_resource path="res://addons/godot-xr-tools/functions/function_pointer.tscn" type="PackedScene" id=6]
+[ext_resource path="res://addons/godot-xr-tools/objects/pickable.tscn" type="PackedScene" id=7]
+[ext_resource path="res://addons/godot-xr-tools/functions/movement_flight.tscn" type="PackedScene" id=8]
+[ext_resource path="res://addons/godot-xr-tools/functions/movement_jump.tscn" type="PackedScene" id=9]
+[ext_resource path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Models/initialShadingGroup.material" type="Material" id=11]
+[ext_resource path="res://Models/Prunus_Pendula_OBJ/Prunus_Pendula.obj" type="ArrayMesh" id=12]
+[ext_resource path="res://Models/Prunus_Pendula_OBJ/maps/prunus_pendula_branch_2_1_diffuse.jpg" type="Texture" id=13]
+[ext_resource path="res://Models/flower.png" type="Texture" id=14]
+[ext_resource path="res://Scenes/alex/Materials/Grass.tres" type="Material" id=15]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 80, 1, 80 )
+
+[sub_resource type="CubeMesh" id=2]
+size = Vector3( 160, 2, 160 )
+
+[sub_resource type="CubeMesh" id=11]
+size = Vector3( 0.2, 0.2, 0.2 )
+
+[sub_resource type="CubeMesh" id=12]
+size = Vector3( 0.2, 0.2, 0.2 )
+
+[sub_resource type="SpatialMaterial" id=13]
+albedo_texture = ExtResource( 13 )
+
+[sub_resource type="SpatialMaterial" id=14]
+flags_transparent = true
+albedo_texture = ExtResource( 14 )
+
+[sub_resource type="CylinderShape" id=20]
+height = 24.1675
+radius = 2.30685
+
+[sub_resource type="CylinderMesh" id=16]
+bottom_radius = 16.596
+height = 2.918
+
+[sub_resource type="ProceduralSky" id=19]
+sky_top_color = Color( 0.435294, 0.337255, 1, 1 )
+sky_horizon_color = Color( 1, 0.533333, 0.278431, 1 )
+sky_curve = 0.605445
+sun_color = Color( 1, 0.945098, 0.776471, 1 )
+sun_latitude = 7.31
+sun_longitude = -62.94
+sun_energy = 2.23
+
+[sub_resource type="Environment" id=18]
+background_mode = 2
+background_sky = SubResource( 19 )
+ambient_light_color = Color( 1, 0.945098, 0.835294, 1 )
+
+[sub_resource type="CylinderMesh" id=15]
+top_radius = 29.156
+bottom_radius = 38.194
+height = 5.67
+
+[sub_resource type="CylinderShape" id=21]
+height = 7.82762
+radius = 29.1091
+
+[sub_resource type="BoxShape" id=22]
+extents = Vector3( 1, 36.0738, 37.6349 )
+
+[node name="Menu" type="Node"]
+
+[node name="Ground" type="Spatial" parent="."]
+
+[node name="Ground8" type="StaticBody" parent="Ground"]
+transform = Transform( -0.00539318, 0, 0.999986, 0, 1, 0, -0.999986, 0, -0.00539318, 0, 0, 0 )
+collision_layer = 524290
+
+[node name="CollisionShape" type="CollisionShape" parent="Ground/Ground8"]
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Ground/Ground8"]
+transform = Transform( 1, 0, -1.39698e-09, 0, 1, 0, 1.39698e-09, 0, 1, 0, 0, 0 )
+mesh = SubResource( 2 )
+material/0 = ExtResource( 15 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 0.110727, -0.704745, -0.700767, -0.232932, -0.703866, 0.671056, -0.966169, 0.0889273, -0.242094, -4.16264, 72.6675, -4.40193 )
+light_color = Color( 1, 0.831373, 0.509804, 1 )
+light_energy = 1.674
+shadow_enabled = true
+
+[node name="FPController" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.421701, 0, 0.906735, 0, 1, 0, -0.906735, 0, 0.421701, -0.791, 7.05423, -1.11051 )
+
+[node name="ARVRCamera" parent="FPController" index="1"]
+far = 1000.0
+
+[node name="LeftHandController" parent="FPController" index="2"]
+visible = true
+
+[node name="MeshInstance" type="MeshInstance" parent="FPController/LeftHandController" index="0"]
+mesh = SubResource( 11 )
+
+[node name="FunctionTeleport" parent="FPController/LeftHandController" index="1" instance=ExtResource( 2 )]
+max_slope = 1.0
+
+[node name="RightHandController" parent="FPController" index="3"]
+visible = true
+
+[node name="MeshInstance" type="MeshInstance" parent="FPController/RightHandController" index="0"]
+mesh = SubResource( 12 )
+
+[node name="MovementDirect" parent="FPController/RightHandController" index="1" instance=ExtResource( 4 )]
+enabled = true
+order = 10
+max_speed = 10.0
+strafe = true
+
+[node name="MovementJump" parent="FPController/RightHandController" index="2" instance=ExtResource( 9 )]
+jump_button_id = 255
+
+[node name="MovementFlight" parent="FPController/RightHandController" index="3" instance=ExtResource( 8 )]
+
+[node name="FunctionPointer" parent="FPController/RightHandController" index="4" instance=ExtResource( 6 )]
+show_laser = 2
+
+[node name="PlayerBody" parent="FPController" instance=ExtResource( 5 )]
+
+[node name="Viewport2Din3D" parent="." instance=ExtResource( 10 )]
+transform = Transform( 0.421701, 0, 0.906735, 0, 1, 0, -0.906735, 0, 0.421701, -4.2734, 8.73423, -2.73008 )
+scene = ExtResource( 1 )
+
+[node name="Pickable" parent="." instance=ExtResource( 7 )]
+transform = Transform( 0.421701, 0, 0.906735, 0, 1, 0, -0.906735, 0, 0.421701, -0.791, 8.71223, -1.11051 )
+visible = false
+
+[node name="Tree" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.75748, 0 )
+
+[node name="Prunus_Pendula" type="MeshInstance" parent="Tree"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.0697827, 7.9643, -0.148267 )
+mesh = ExtResource( 12 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 13 )
+material/1 = SubResource( 14 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Tree"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.0774433, 14.3804, -0.166392 )
+shape = SubResource( 20 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.87163, 0 )
+visible = false
+mesh = SubResource( 16 )
+material/0 = ExtResource( 11 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 18 )
+
+[node name="Hill" type="StaticBody" parent="."]
+
+[node name="MeshInstance" type="MeshInstance" parent="Hill"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.50555, 0 )
+mesh = SubResource( 15 )
+skeleton = NodePath("../..")
+material/0 = ExtResource( 15 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Hill"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.49689, 0 )
+shape = SubResource( 21 )
+
+[node name="Invisible Wall" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14.3886, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Invisible Wall"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -36.7014, 20.9523, 0 )
+shape = SubResource( 22 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Invisible Wall"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 38.3349, 20.6583, 0 )
+shape = SubResource( 22 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="Invisible Wall"]
+transform = Transform( -0.011868, 0, -0.99993, 0, 1, 0, 0.99993, 0, -0.011868, -0.877716, 21.0308, -39.1424 )
+shape = SubResource( 22 )
+
+[node name="CollisionShape4" type="CollisionShape" parent="Invisible Wall"]
+transform = Transform( -0.011868, 0, -0.99993, 0, 1, 0, 0.99993, 0, -0.011868, -0.877716, 21.0308, 38.4996 )
+shape = SubResource( 22 )
+
+[editable path="FPController"]
