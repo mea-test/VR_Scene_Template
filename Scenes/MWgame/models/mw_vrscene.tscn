@@ -1,0 +1,3510 @@
+[gd_scene load_steps=119 format=2]
+
+[ext_resource path="res://addons/godot-xr-tools/functions/movement_direct.tscn" type="PackedScene" id=1]
+[ext_resource path="res://addons/godot-xr-tools/functions/function_pickup.tscn" type="PackedScene" id=2]
+[ext_resource path="res://addons/godot-xr-tools/functions/movement_turn.tscn" type="PackedScene" id=3]
+[ext_resource path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_hand_low.tscn" type="PackedScene" id=4]
+[ext_resource path="res://addons/godot-xr-tools/functions/function_pointer.tscn" type="PackedScene" id=5]
+[ext_resource path="res://addons/godot-openxr/scenes/first_person_controller_vr.tscn" type="PackedScene" id=6]
+[ext_resource path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_hand_low.tscn" type="PackedScene" id=7]
+[ext_resource path="res://addons/godot-xr-tools/objects/pickable.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/MWgame/models/plain_mug.glb" type="PackedScene" id=9]
+[ext_resource path="res://addons/godot-xr-tools/player/player_body.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/MWgame/skyboxes/AllSkyFree_AnotherPlanet.tscn" type="PackedScene" id=11]
+[ext_resource path="res://addons/godot-xr-tools/functions/movement_jump.tscn" type="PackedScene" id=12]
+[ext_resource path="res://addons/godot-xr-tools/functions/movement_flight.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/MWgame/models/bowling_ball.glb" type="PackedScene" id=14]
+[ext_resource path="res://addons/godot-xr-tools/functions/function_teleport.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/MWgame/textures/fenceglass.tres" type="Material" id=16]
+[ext_resource path="res://Scenes/MWgame/textures/vr_mainwallpaper_tan.tres" type="Material" id=17]
+[ext_resource path="res://Scenes/MWgame/textures/glassbottle_shine.tres" type="Material" id=18]
+[ext_resource path="res://Scenes/MWgame/textures/mw_floorcarpet.tres" type="Material" id=19]
+[ext_resource path="res://Scenes/MWgame/textures/exerciseball_1.png" type="Texture" id=20]
+[ext_resource path="res://Scenes/MWgame/sounds/255851__kwahmah_02__bangkokmeterologicalradio.wav" type="AudioStream" id=21]
+[ext_resource path="res://Scenes/MWgame/textures/wallpaper_old_wall.png" type="Texture" id=22]
+[ext_resource path="res://Scenes/MWgame/textures/office_spaceinspirational_poster.png" type="Texture" id=23]
+
+[sub_resource type="CubeMesh" id=3]
+size = Vector3( 0.2, 0.2, 0.2 )
+
+[sub_resource type="CubeMesh" id=4]
+size = Vector3( 0.2, 0.2, 0.2 )
+
+[sub_resource type="CapsuleShape" id=5]
+radius = 0.15
+height = 1.4
+
+[sub_resource type="CylinderMesh" id=64]
+top_radius = 0.1
+bottom_radius = 0.1
+height = 1.0
+
+[sub_resource type="CylinderShape" id=65]
+height = 1.0
+radius = 0.1
+
+[sub_resource type="CubeMesh" id=66]
+size = Vector3( 16.2, 0.7, 0.1 )
+
+[sub_resource type="BoxShape" id=68]
+extents = Vector3( 8.1, 0.35, 0.05 )
+
+[sub_resource type="CubeMesh" id=69]
+size = Vector3( 0.1, 0.7, 15.25 )
+
+[sub_resource type="BoxShape" id=70]
+extents = Vector3( 0.05, 0.35, 7.625 )
+
+[sub_resource type="CubeMesh" id=85]
+size = Vector3( 8, 1, 16 )
+
+[sub_resource type="BoxShape" id=86]
+extents = Vector3( 1, 0.5, 8 )
+
+[sub_resource type="CubeMesh" id=89]
+size = Vector3( 0.5, 4, 2 )
+
+[sub_resource type="BoxShape" id=90]
+extents = Vector3( 0.25, 2, 1 )
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 8.5, 0.5, 8 )
+
+[sub_resource type="CubeMesh" id=2]
+size = Vector3( 17, 1, 16 )
+
+[sub_resource type="CubeMesh" id=7]
+size = Vector3( 1, 4, 10 )
+
+[sub_resource type="BoxShape" id=9]
+extents = Vector3( 0.5, 2, 5 )
+
+[sub_resource type="BoxShape" id=10]
+extents = Vector3( 5, 0.25, 5 )
+
+[sub_resource type="CubeMesh" id=11]
+size = Vector3( 10, 0.5, 10 )
+
+[sub_resource type="CubeMesh" id=62]
+size = Vector3( 12, 0.5, 10.5 )
+
+[sub_resource type="BoxShape" id=63]
+extents = Vector3( 6, 0.25, 5.25 )
+
+[sub_resource type="PlaneMesh" id=71]
+size = Vector2( 2.25, 1.41 )
+
+[sub_resource type="SpatialMaterial" id=72]
+albedo_texture = ExtResource( 23 )
+
+[sub_resource type="CubeMesh" id=12]
+size = Vector3( 12, 1, 0.25 )
+
+[sub_resource type="SpatialMaterial" id=14]
+albedo_texture = ExtResource( 22 )
+uv1_scale = Vector3( 0.3, 0.3, 0.3 )
+uv1_offset = Vector3( -0.058, 0.15, 0 )
+uv1_triplanar = true
+
+[sub_resource type="BoxShape" id=13]
+extents = Vector3( 6, 0.5, 0.125 )
+
+[sub_resource type="SpatialMaterial" id=15]
+albedo_texture = ExtResource( 22 )
+uv1_scale = Vector3( 0.3, 0.3, 0.3 )
+uv1_offset = Vector3( -0.058, 0.049, 0 )
+uv1_triplanar = true
+
+[sub_resource type="CubeMesh" id=17]
+size = Vector3( 4, 2, 0.25 )
+
+[sub_resource type="SpatialMaterial" id=18]
+albedo_texture = ExtResource( 22 )
+uv1_scale = Vector3( 0.3, 0.3, 0.3 )
+uv1_offset = Vector3( -0.008, -0.396, 0 )
+uv1_triplanar = true
+
+[sub_resource type="BoxShape" id=19]
+extents = Vector3( 2, 1, 0.125 )
+
+[sub_resource type="SpatialMaterial" id=20]
+albedo_texture = ExtResource( 22 )
+uv1_scale = Vector3( 0.3, 0.3, 0.3 )
+uv1_offset = Vector3( 0.142, -0.402, 0 )
+uv1_triplanar = true
+
+[sub_resource type="PlaneMesh" id=22]
+size = Vector2( 4, 2 )
+
+[sub_resource type="SpatialMaterial" id=23]
+flags_transparent = true
+albedo_color = Color( 0.701961, 0.737255, 0.823529, 0.392157 )
+metallic = 0.11
+metallic_specular = 0.89
+roughness = 0.02
+refraction_enabled = true
+refraction_scale = 0.01
+refraction_texture_channel = 0
+
+[sub_resource type="BoxShape" id=24]
+extents = Vector3( 2, 0.03, 1 )
+
+[sub_resource type="CubeMesh" id=16]
+size = Vector3( 5, 4, 0.25 )
+
+[sub_resource type="BoxShape" id=21]
+extents = Vector3( 2.5, 2, 0.125 )
+
+[sub_resource type="CubeMesh" id=47]
+size = Vector3( 0.5, 0.275, 0.12 )
+
+[sub_resource type="SpatialMaterial" id=49]
+albedo_color = Color( 0.486275, 0.533333, 0.494118, 1 )
+metallic = 0.32
+metallic_specular = 0.79
+
+[sub_resource type="BoxShape" id=48]
+extents = Vector3( 0.25, 0.138, 0.06 )
+
+[sub_resource type="CylinderMesh" id=56]
+top_radius = 0.11
+bottom_radius = 0.12
+height = 0.005
+
+[sub_resource type="OpenSimplexNoise" id=57]
+seed = 175
+period = 1.5
+
+[sub_resource type="NoiseTexture" id=58]
+seamless = true
+noise = SubResource( 57 )
+
+[sub_resource type="SpatialMaterial" id=59]
+albedo_color = Color( 0.423529, 0.423529, 0.423529, 1 )
+albedo_texture = SubResource( 58 )
+metallic = 0.19
+
+[sub_resource type="SphereMesh" id=60]
+radius = 0.05
+height = 0.1
+
+[sub_resource type="SpatialMaterial" id=61]
+albedo_color = Color( 0.666667, 0.141176, 0.141176, 1 )
+
+[sub_resource type="PhysicsMaterial" id=29]
+friction = 0.41
+bounce = 2.0
+
+[sub_resource type="SphereMesh" id=25]
+radius = 0.5
+height = 1.0
+
+[sub_resource type="SpatialMaterial" id=28]
+albedo_color = Color( 0.431373, 0.619608, 0.768627, 1 )
+albedo_texture = ExtResource( 20 )
+metallic_specular = 1.0
+roughness = 0.2
+
+[sub_resource type="SphereShape" id=26]
+radius = 0.5
+
+[sub_resource type="CylinderMesh" id=51]
+top_radius = 0.04
+bottom_radius = 0.04
+height = 0.1
+
+[sub_resource type="CylinderMesh" id=52]
+top_radius = 0.02
+bottom_radius = 0.04
+height = 0.1
+
+[sub_resource type="CylinderShape" id=53]
+height = 0.2
+radius = 0.04
+
+[sub_resource type="CylinderMesh" id=54]
+top_radius = 0.02
+bottom_radius = 0.02
+height = 0.05
+
+[sub_resource type="CylinderShape" id=55]
+height = 0.05
+radius = 0.02
+
+[sub_resource type="PhysicsMaterial" id=46]
+bounce = 0.2
+
+[sub_resource type="CylinderMesh" id=38]
+top_radius = 0.3
+bottom_radius = 0.3
+height = 0.1
+
+[sub_resource type="OpenSimplexNoise" id=39]
+
+[sub_resource type="NoiseTexture" id=40]
+seamless = true
+noise = SubResource( 39 )
+
+[sub_resource type="SpatialMaterial" id=41]
+albedo_color = Color( 0.215686, 0.227451, 0.235294, 1 )
+albedo_texture = SubResource( 40 )
+uv1_triplanar = true
+
+[sub_resource type="CylinderShape" id=42]
+height = 0.1
+radius = 0.3
+
+[sub_resource type="CubeMesh" id=43]
+size = Vector3( 0.08, 0.45, 0.08 )
+
+[sub_resource type="SpatialMaterial" id=45]
+albedo_color = Color( 0.643137, 0.611765, 0.611765, 1 )
+
+[sub_resource type="BoxShape" id=44]
+extents = Vector3( 0.04, 0.225, 0.04 )
+
+[sub_resource type="PhysicsMaterial" id=37]
+rough = true
+bounce = 0.34
+
+[sub_resource type="CubeMesh" id=30]
+size = Vector3( 2.5, 0.125, 1 )
+
+[sub_resource type="SpatialMaterial" id=34]
+albedo_color = Color( 0.368627, 0.32549, 0.258824, 1 )
+
+[sub_resource type="BoxShape" id=31]
+extents = Vector3( 1.25, 0.063, 0.5 )
+
+[sub_resource type="CubeMesh" id=32]
+size = Vector3( 0.1, 0.8, 0.6 )
+
+[sub_resource type="SpatialMaterial" id=35]
+albedo_color = Color( 0.109804, 0.109804, 0.109804, 1 )
+
+[sub_resource type="BoxShape" id=33]
+extents = Vector3( 0.05, 0.4, 0.3 )
+
+[sub_resource type="SpatialMaterial" id=36]
+albedo_color = Color( 0.109804, 0.109804, 0.109804, 1 )
+
+[sub_resource type="CylinderMesh" id=73]
+top_radius = 0.05
+bottom_radius = 0.05
+height = 0.3
+
+[sub_resource type="SpatialMaterial" id=75]
+albedo_color = Color( 0.607843, 0.6, 0.6, 1 )
+
+[sub_resource type="CylinderShape" id=76]
+height = 0.3
+radius = 0.05
+
+[sub_resource type="CylinderMesh" id=74]
+top_radius = 0.1
+bottom_radius = 0.05
+height = 0.1
+
+[sub_resource type="SpatialMaterial" id=77]
+albedo_color = Color( 0.607843, 0.6, 0.6, 1 )
+
+[sub_resource type="CylinderShape" id=78]
+height = 0.06
+radius = 0.1
+
+[sub_resource type="CubeMesh" id=91]
+size = Vector3( 12, 4, 0.25 )
+
+[sub_resource type="BoxShape" id=92]
+extents = Vector3( 6, 2, 0.125 )
+
+[sub_resource type="PhysicsMaterial" id=95]
+bounce = 0.06
+
+[sub_resource type="CylinderShape" id=93]
+height = 0.142453
+radius = 0.0612111
+
+[sub_resource type="CapsuleShape" id=94]
+radius = 0.0137593
+height = 0.0570546
+
+[sub_resource type="CubeMesh" id=98]
+size = Vector3( 3, 3.5, 0.25 )
+
+[sub_resource type="SpatialMaterial" id=100]
+albedo_texture = ExtResource( 22 )
+uv1_scale = Vector3( 0.3, 0.3, 0.3 )
+uv1_offset = Vector3( -0.065, -0.476, 0 )
+uv1_triplanar = true
+
+[sub_resource type="BoxShape" id=99]
+extents = Vector3( 1.5, 1.75, 0.125 )
+
+[sub_resource type="CubeMesh" id=87]
+size = Vector3( 12, 4, 0.25 )
+
+[sub_resource type="BoxShape" id=88]
+extents = Vector3( 6, 2, 0.125 )
+
+[sub_resource type="PhysicsMaterial" id=96]
+rough = true
+
+[sub_resource type="SphereShape" id=97]
+radius = 0.199133
+
+[sub_resource type="CubeMesh" id=79]
+size = Vector3( 0.5, 4, 9 )
+
+[sub_resource type="BoxShape" id=80]
+extents = Vector3( 0.25, 2, 4.5 )
+
+[sub_resource type="BoxShape" id=81]
+extents = Vector3( 0.375, 2, 0.375 )
+
+[sub_resource type="CubeMesh" id=82]
+size = Vector3( 0.75, 4, 0.75 )
+
+[sub_resource type="CubeMesh" id=83]
+size = Vector3( 3, 0.5, 9 )
+
+[sub_resource type="BoxShape" id=84]
+extents = Vector3( 1.5, 0.25, 4.5 )
+
+[node name="Spatial" type="Spatial"]
+
+[node name="Building" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.75, 0 )
+
+[node name="FPController" parent="Building" instance=ExtResource( 6 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -2.74297, -4 )
+
+[node name="ARVRCamera" parent="Building/FPController" index="1"]
+far = 1000.0
+
+[node name="LeftHandController" parent="Building/FPController" index="2"]
+visible = true
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/FPController/LeftHandController" index="0"]
+visible = false
+mesh = SubResource( 3 )
+
+[node name="MovementDirect" parent="Building/FPController/LeftHandController" index="1" instance=ExtResource( 1 )]
+enabled = true
+order = 10
+max_speed = 3.0
+strafe = true
+
+[node name="FunctionTeleport" parent="Building/FPController/LeftHandController" index="2" instance=ExtResource( 15 )]
+max_slope = 1.0
+
+[node name="FunctionPickup" parent="Building/FPController/LeftHandController" index="3" instance=ExtResource( 2 )]
+grab_distance = 0.1
+ranged_distance = 1.0
+
+[node name="LeftHand" parent="Building/FPController/LeftHandController" index="4" instance=ExtResource( 4 )]
+
+[node name="RightHandController" parent="Building/FPController" index="3"]
+visible = true
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/FPController/RightHandController" index="0"]
+visible = false
+mesh = SubResource( 4 )
+
+[node name="MovementTurn" parent="Building/FPController/RightHandController" index="1" instance=ExtResource( 3 )]
+smooth_turn_speed = 4.0
+
+[node name="MovementJump" parent="Building/FPController/RightHandController" index="2" instance=ExtResource( 12 )]
+order = 40
+jump_button_id = 15
+
+[node name="MovementFlight" parent="Building/FPController/RightHandController" index="3" instance=ExtResource( 13 )]
+
+[node name="FunctionPointer" parent="Building/FPController/RightHandController" index="4" instance=ExtResource( 5 )]
+show_laser = 2
+active_button = 2
+
+[node name="FunctionPickup" parent="Building/FPController/RightHandController" index="5" instance=ExtResource( 2 )]
+grab_distance = 0.1
+ranged_distance = 1.0
+
+[node name="RightHand" parent="Building/FPController/RightHandController" index="6" instance=ExtResource( 7 )]
+
+[node name="PlayerBody" parent="Building/FPController" instance=ExtResource( 10 )]
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/FPController/PlayerBody"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.8, 0 )
+shape = SubResource( 5 )
+
+[node name="mainexterior" type="Spatial" parent="Building"]
+
+[node name="Room 1 outside" type="Spatial" parent="Building/mainexterior"]
+
+[node name="Pole" type="StaticBody" parent="Building/mainexterior/Room 1 outside"]
+transform = Transform( 1, 0, 0, 0, 1.25, 0, 0, 0, 1, -8.1, -2.12, -7.6 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/mainexterior/Room 1 outside/Pole"]
+mesh = SubResource( 64 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/mainexterior/Room 1 outside/Pole"]
+shape = SubResource( 65 )
+
+[node name="Pole2" type="StaticBody" parent="Building/mainexterior/Room 1 outside"]
+transform = Transform( 1, 0, 0, 0, 1.25, 0, 0, 0, 1, 8.1, -2.12, -7.6 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/mainexterior/Room 1 outside/Pole2"]
+mesh = SubResource( 64 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/mainexterior/Room 1 outside/Pole2"]
+shape = SubResource( 65 )
+
+[node name="Pole3" type="StaticBody" parent="Building/mainexterior/Room 1 outside"]
+transform = Transform( 1, 0, 0, 0, 1.25, 0, 0, 0, 1, -8.1, -2.12, 7.6 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/mainexterior/Room 1 outside/Pole3"]
+mesh = SubResource( 64 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/mainexterior/Room 1 outside/Pole3"]
+shape = SubResource( 65 )
+
+[node name="Pole4" type="StaticBody" parent="Building/mainexterior/Room 1 outside"]
+transform = Transform( 1, 0, 0, 0, 1.25, 0, 0, 0, 1, 8.1, -2.12, 7.6 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/mainexterior/Room 1 outside/Pole4"]
+mesh = SubResource( 64 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/mainexterior/Room 1 outside/Pole4"]
+shape = SubResource( 65 )
+
+[node name="glassfence1" type="StaticBody" parent="Building/mainexterior/Room 1 outside"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 7.6 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/mainexterior/Room 1 outside/glassfence1"]
+mesh = SubResource( 66 )
+material/0 = ExtResource( 16 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/mainexterior/Room 1 outside/glassfence1"]
+shape = SubResource( 68 )
+
+[node name="glassfence 2" type="StaticBody" parent="Building/mainexterior/Room 1 outside"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.1, -2, 0 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/mainexterior/Room 1 outside/glassfence 2"]
+mesh = SubResource( 69 )
+material/0 = ExtResource( 16 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/mainexterior/Room 1 outside/glassfence 2"]
+shape = SubResource( 70 )
+
+[node name="glassfence 3" type="StaticBody" parent="Building/mainexterior/Room 1 outside"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.1, -2, 0 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/mainexterior/Room 1 outside/glassfence 3"]
+mesh = SubResource( 69 )
+material/0 = ExtResource( 16 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/mainexterior/Room 1 outside/glassfence 3"]
+shape = SubResource( 70 )
+
+[node name="Room 2 outside" type="Spatial" parent="Building/mainexterior"]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -32 )
+
+[node name="Pole" type="StaticBody" parent="Building/mainexterior/Room 2 outside"]
+transform = Transform( 1, 0, 0, 0, 1.25, 0, 0, 0, 1, -8.1, -2.12, -7.6 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/mainexterior/Room 2 outside/Pole"]
+mesh = SubResource( 64 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/mainexterior/Room 2 outside/Pole"]
+shape = SubResource( 65 )
+
+[node name="Pole2" type="StaticBody" parent="Building/mainexterior/Room 2 outside"]
+transform = Transform( 1, 0, 0, 0, 1.25, 0, 0, 0, 1, 8.1, -2.12, -7.6 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/mainexterior/Room 2 outside/Pole2"]
+mesh = SubResource( 64 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/mainexterior/Room 2 outside/Pole2"]
+shape = SubResource( 65 )
+
+[node name="Pole3" type="StaticBody" parent="Building/mainexterior/Room 2 outside"]
+transform = Transform( 1, 0, 0, 0, 1.25, 0, 0, 0, 1, -8.1, -2.12, 7.6 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/mainexterior/Room 2 outside/Pole3"]
+mesh = SubResource( 64 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/mainexterior/Room 2 outside/Pole3"]
+shape = SubResource( 65 )
+
+[node name="Pole4" type="StaticBody" parent="Building/mainexterior/Room 2 outside"]
+transform = Transform( 1, 0, 0, 0, 1.25, 0, 0, 0, 1, 8.1, -2.12, 7.6 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/mainexterior/Room 2 outside/Pole4"]
+mesh = SubResource( 64 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/mainexterior/Room 2 outside/Pole4"]
+shape = SubResource( 65 )
+
+[node name="glassfence1" type="StaticBody" parent="Building/mainexterior/Room 2 outside"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 7.6 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/mainexterior/Room 2 outside/glassfence1"]
+mesh = SubResource( 66 )
+material/0 = ExtResource( 16 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/mainexterior/Room 2 outside/glassfence1"]
+shape = SubResource( 68 )
+
+[node name="glassfence 2" type="StaticBody" parent="Building/mainexterior/Room 2 outside"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.1, -2, 0 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/mainexterior/Room 2 outside/glassfence 2"]
+mesh = SubResource( 69 )
+material/0 = ExtResource( 16 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/mainexterior/Room 2 outside/glassfence 2"]
+shape = SubResource( 70 )
+
+[node name="glassfence 3" type="StaticBody" parent="Building/mainexterior/Room 2 outside"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.1, -2, 0 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/mainexterior/Room 2 outside/glassfence 3"]
+mesh = SubResource( 69 )
+material/0 = ExtResource( 16 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/mainexterior/Room 2 outside/glassfence 3"]
+shape = SubResource( 70 )
+
+[node name="Room 3 outside" type="Spatial" parent="Building/mainexterior"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 16.5, 0, -16 )
+
+[node name="Pole" type="StaticBody" parent="Building/mainexterior/Room 3 outside"]
+transform = Transform( 1, 0, 0, 0, 1.25, 0, 0, 0, 1, -8.1, -2.12, -7.6 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/mainexterior/Room 3 outside/Pole"]
+mesh = SubResource( 64 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/mainexterior/Room 3 outside/Pole"]
+shape = SubResource( 65 )
+
+[node name="Pole2" type="StaticBody" parent="Building/mainexterior/Room 3 outside"]
+transform = Transform( 1, 0, 0, 0, 1.25, 0, 0, 0, 1, 8.1, -2.12, -7.6 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/mainexterior/Room 3 outside/Pole2"]
+mesh = SubResource( 64 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/mainexterior/Room 3 outside/Pole2"]
+shape = SubResource( 65 )
+
+[node name="Pole3" type="StaticBody" parent="Building/mainexterior/Room 3 outside"]
+transform = Transform( 1, 0, 0, 0, 1.25, 0, 0, 0, 1, -8.1, -2.12, 7.6 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/mainexterior/Room 3 outside/Pole3"]
+mesh = SubResource( 64 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/mainexterior/Room 3 outside/Pole3"]
+shape = SubResource( 65 )
+
+[node name="Pole4" type="StaticBody" parent="Building/mainexterior/Room 3 outside"]
+transform = Transform( 1, 0, 0, 0, 1.25, 0, 0, 0, 1, 8.1, -2.12, 7.6 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/mainexterior/Room 3 outside/Pole4"]
+mesh = SubResource( 64 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/mainexterior/Room 3 outside/Pole4"]
+shape = SubResource( 65 )
+
+[node name="glassfence1" type="StaticBody" parent="Building/mainexterior/Room 3 outside"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 7.6 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/mainexterior/Room 3 outside/glassfence1"]
+mesh = SubResource( 66 )
+material/0 = ExtResource( 16 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/mainexterior/Room 3 outside/glassfence1"]
+shape = SubResource( 68 )
+
+[node name="glassfence 2" type="StaticBody" parent="Building/mainexterior/Room 3 outside"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.1, -2, 0 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/mainexterior/Room 3 outside/glassfence 2"]
+mesh = SubResource( 69 )
+material/0 = ExtResource( 16 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/mainexterior/Room 3 outside/glassfence 2"]
+shape = SubResource( 70 )
+
+[node name="glassfence 3" type="StaticBody" parent="Building/mainexterior/Room 3 outside"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.1, -2, 0 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/mainexterior/Room 3 outside/glassfence 3"]
+mesh = SubResource( 69 )
+material/0 = ExtResource( 16 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/mainexterior/Room 3 outside/glassfence 3"]
+shape = SubResource( 70 )
+
+[node name="Room 4 Exit outside" type="Spatial" parent="Building/mainexterior"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, -16 )
+
+[node name="Floor" type="StaticBody" parent="Building/mainexterior/Room 4 Exit outside"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -3.25, 0 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/mainexterior/Room 4 Exit outside/Floor"]
+mesh = SubResource( 85 )
+skeleton = NodePath("../..")
+material/0 = ExtResource( 19 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/mainexterior/Room 4 Exit outside/Floor"]
+shape = SubResource( 86 )
+
+[node name="Pickable secret wall" parent="Building/mainexterior/Room 4 Exit outside" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2533, -0.75, 0 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/mainexterior/Room 4 Exit outside/Pickable secret wall"]
+mesh = SubResource( 89 )
+material/0 = ExtResource( 17 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Building/mainexterior/Room 4 Exit outside/Pickable secret wall"]
+shape = SubResource( 90 )
+
+[node name="Room 1" type="Spatial" parent="Building"]
+
+[node name="Room 1 maininterior" type="Spatial" parent="Building/Room 1"]
+
+[node name="Ceiling Light" type="OmniLight" parent="Building/Room 1/Room 1 maininterior"]
+light_color = Color( 1, 0.811765, 0.517647, 1 )
+light_energy = 1.44
+light_indirect_energy = 1.44
+light_specular = 0.0
+shadow_enabled = true
+omni_range = 7.0
+
+[node name="Floor" type="StaticBody" parent="Building/Room 1/Room 1 maininterior"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.25, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/Room 1/Room 1 maininterior/Floor"]
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/Room 1/Room 1 maininterior/Floor"]
+mesh = SubResource( 2 )
+skeleton = NodePath("")
+material/0 = ExtResource( 19 )
+
+[node name="Wall E" type="StaticBody" parent="Building/Room 1/Room 1 maininterior"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, -0.75, 0 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/Room 1/Room 1 maininterior/Wall E"]
+mesh = SubResource( 7 )
+material/0 = ExtResource( 17 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/Room 1/Room 1 maininterior/Wall E"]
+shape = SubResource( 9 )
+
+[node name="Wall W" type="StaticBody" parent="Building/Room 1/Room 1 maininterior"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, -0.75, 0 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/Room 1/Room 1 maininterior/Wall W"]
+mesh = SubResource( 7 )
+material/0 = ExtResource( 17 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/Room 1/Room 1 maininterior/Wall W"]
+shape = SubResource( 9 )
+
+[node name="Ceiling" type="StaticBody" parent="Building/Room 1/Room 1 maininterior"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/Room 1/Room 1 maininterior/Ceiling"]
+shape = SubResource( 10 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/Room 1/Room 1 maininterior/Ceiling"]
+mesh = SubResource( 11 )
+
+[node name="Roof" type="StaticBody" parent="Building/Room 1/Room 1 maininterior"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/Room 1/Room 1 maininterior/Roof"]
+mesh = SubResource( 62 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/Room 1/Room 1 maininterior/Roof"]
+shape = SubResource( 63 )
+
+[node name="poster" type="StaticBody" parent="Building/Room 1/Room 1 maininterior"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.999, 0.446, -1.602 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/Room 1/Room 1 maininterior/poster"]
+transform = Transform( -4.37114e-08, 1, 0, 4.37114e-08, 1.91069e-15, -1, -1, -4.37114e-08, -4.37114e-08, 0, -1, 0 )
+mesh = SubResource( 71 )
+material/0 = SubResource( 72 )
+
+[node name="Wall with window" type="Spatial" parent="Building/Room 1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.75, 0 )
+
+[node name="Wall S 1b" type="StaticBody" parent="Building/Room 1/Wall with window"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 5.125 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/Room 1/Wall with window/Wall S 1b"]
+mesh = SubResource( 12 )
+material/0 = SubResource( 14 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/Room 1/Wall with window/Wall S 1b"]
+shape = SubResource( 13 )
+
+[node name="Wall S 2b" type="StaticBody" parent="Building/Room 1/Wall with window"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, 5.125 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/Room 1/Wall with window/Wall S 2b"]
+mesh = SubResource( 12 )
+material/0 = SubResource( 15 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/Room 1/Wall with window/Wall S 2b"]
+shape = SubResource( 13 )
+
+[node name="Wall S 1s" type="StaticBody" parent="Building/Room 1/Wall with window"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 2, 5.125 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/Room 1/Wall with window/Wall S 1s"]
+mesh = SubResource( 17 )
+material/0 = SubResource( 18 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/Room 1/Wall with window/Wall S 1s"]
+shape = SubResource( 19 )
+
+[node name="Wall S 2s" type="StaticBody" parent="Building/Room 1/Wall with window"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2, 5.125 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/Room 1/Wall with window/Wall S 2s"]
+mesh = SubResource( 17 )
+material/0 = SubResource( 20 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/Room 1/Wall with window/Wall S 2s"]
+shape = SubResource( 19 )
+
+[node name="window" type="StaticBody" parent="Building/Room 1/Wall with window"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 2, 5.075 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/Room 1/Wall with window/window"]
+mesh = SubResource( 22 )
+material/0 = SubResource( 23 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/Room 1/Wall with window/window"]
+shape = SubResource( 24 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="Building/Room 1/Wall with window/window"]
+transform = Transform( -1, 8.74228e-08, 3.82137e-15, -8.74228e-08, -1, -8.74228e-08, -3.82137e-15, -8.74228e-08, 1, 0, -0.0451798, 0 )
+mesh = SubResource( 22 )
+material/0 = SubResource( 23 )
+
+[node name="Wall with doorway" type="Spatial" parent="Building/Room 1"]
+
+[node name="Wall N 1s" type="StaticBody" parent="Building/Room 1/Wall with doorway"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, -0.75, -5.125 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/Room 1/Wall with doorway/Wall N 1s"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0 )
+mesh = SubResource( 16 )
+material/0 = ExtResource( 17 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/Room 1/Wall with doorway/Wall N 1s"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0 )
+shape = SubResource( 21 )
+
+[node name="Wall N 2s" type="StaticBody" parent="Building/Room 1/Wall with doorway"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, -0.75, -5.125 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/Room 1/Wall with doorway/Wall N 2s"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0 )
+mesh = SubResource( 16 )
+material/0 = ExtResource( 17 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/Room 1/Wall with doorway/Wall N 2s"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0 )
+shape = SubResource( 21 )
+
+[node name="Props" type="Spatial" parent="Building/Room 1"]
+
+[node name="Pickable radio" parent="Building/Room 1/Props" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.714925, 0, 1.67235 )
+gravity_scale = 0.3
+
+[node name="radiobase mesh" type="MeshInstance" parent="Building/Room 1/Props/Pickable radio"]
+mesh = SubResource( 47 )
+material/0 = SubResource( 49 )
+
+[node name="radiobase collision" type="CollisionShape" parent="Building/Room 1/Props/Pickable radio"]
+shape = SubResource( 48 )
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Building/Room 1/Props/Pickable radio"]
+stream = ExtResource( 21 )
+autoplay = true
+
+[node name="speaker mesh" type="MeshInstance" parent="Building/Room 1/Props/Pickable radio"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.095, 0, -0.063 )
+mesh = SubResource( 56 )
+material/0 = SubResource( 59 )
+
+[node name="OmniLight" type="OmniLight" parent="Building/Room 1/Props/Pickable radio"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.164, 0.067, -0.092 )
+light_color = Color( 1, 0, 0, 1 )
+light_energy = 4.58
+omni_range = 0.09
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/Room 1/Props/Pickable radio"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.165, 0.063, -0.029 )
+mesh = SubResource( 60 )
+material/0 = SubResource( 61 )
+
+[node name="Pickable ball 1" parent="Building/Room 1/Props" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.04879, 3.00378 )
+mass = 0.131633
+physics_material_override = SubResource( 29 )
+gravity_scale = 0.1
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/Room 1/Props/Pickable ball 1"]
+mesh = SubResource( 25 )
+skeleton = NodePath("")
+material/0 = SubResource( 28 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Building/Room 1/Props/Pickable ball 1"]
+shape = SubResource( 26 )
+
+[node name="Pickable ball 2" parent="Building/Room 1/Props" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.725, -2.247, -3.904 )
+mass = 0.131633
+physics_material_override = SubResource( 29 )
+gravity_scale = 0.1
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/Room 1/Props/Pickable ball 2"]
+mesh = SubResource( 25 )
+skeleton = NodePath("")
+material/0 = SubResource( 28 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Building/Room 1/Props/Pickable ball 2"]
+shape = SubResource( 26 )
+
+[node name="Pickable bottle 1" parent="Building/Room 1/Props" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.599423 )
+mass = 0.12
+gravity_scale = 0.1
+
+[node name="bottlebottom mesh" type="MeshInstance" parent="Building/Room 1/Props/Pickable bottle 1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0 )
+mesh = SubResource( 51 )
+skeleton = NodePath("")
+material/0 = ExtResource( 18 )
+
+[node name="bottlemid mesh" type="MeshInstance" parent="Building/Room 1/Props/Pickable bottle 1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0 )
+mesh = SubResource( 52 )
+skeleton = NodePath("")
+material/0 = ExtResource( 18 )
+
+[node name="bottlebody mesh" type="CollisionShape" parent="Building/Room 1/Props/Pickable bottle 1"]
+shape = SubResource( 53 )
+
+[node name="bottletop mesh" type="MeshInstance" parent="Building/Room 1/Props/Pickable bottle 1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0 )
+mesh = SubResource( 54 )
+skeleton = NodePath("")
+material/0 = ExtResource( 18 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Building/Room 1/Props/Pickable bottle 1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0 )
+shape = SubResource( 55 )
+
+[node name="Pickable bottle 2" parent="Building/Room 1/Props" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.79, -1.725, 0.599 )
+mass = 0.12
+gravity_scale = 0.1
+
+[node name="bottlebottom mesh" type="MeshInstance" parent="Building/Room 1/Props/Pickable bottle 2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0 )
+mesh = SubResource( 51 )
+skeleton = NodePath("")
+material/0 = ExtResource( 18 )
+
+[node name="bottlemid mesh" type="MeshInstance" parent="Building/Room 1/Props/Pickable bottle 2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0 )
+mesh = SubResource( 52 )
+skeleton = NodePath("")
+material/0 = ExtResource( 18 )
+
+[node name="bottlebody mesh" type="CollisionShape" parent="Building/Room 1/Props/Pickable bottle 2"]
+shape = SubResource( 53 )
+
+[node name="bottletop mesh" type="MeshInstance" parent="Building/Room 1/Props/Pickable bottle 2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0 )
+mesh = SubResource( 54 )
+skeleton = NodePath("")
+material/0 = ExtResource( 18 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Building/Room 1/Props/Pickable bottle 2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0 )
+shape = SubResource( 55 )
+
+[node name="Pickable bottle 3" parent="Building/Room 1/Props" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.84566, -1.725, 0.716534 )
+mass = 0.12
+gravity_scale = 0.1
+
+[node name="bottlebottom mesh" type="MeshInstance" parent="Building/Room 1/Props/Pickable bottle 3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0 )
+mesh = SubResource( 51 )
+skeleton = NodePath("")
+material/0 = ExtResource( 18 )
+
+[node name="bottlemid mesh" type="MeshInstance" parent="Building/Room 1/Props/Pickable bottle 3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0 )
+mesh = SubResource( 52 )
+skeleton = NodePath("")
+material/0 = ExtResource( 18 )
+
+[node name="bottlebody mesh" type="CollisionShape" parent="Building/Room 1/Props/Pickable bottle 3"]
+shape = SubResource( 53 )
+
+[node name="bottletop mesh" type="MeshInstance" parent="Building/Room 1/Props/Pickable bottle 3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0 )
+mesh = SubResource( 54 )
+skeleton = NodePath("")
+material/0 = ExtResource( 18 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Building/Room 1/Props/Pickable bottle 3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0 )
+shape = SubResource( 55 )
+
+[node name="Pickable bottle 4" parent="Building/Room 1/Props" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.95737, -1.725, 0.588399 )
+mass = 0.12
+gravity_scale = 0.1
+
+[node name="bottlebottom mesh" type="MeshInstance" parent="Building/Room 1/Props/Pickable bottle 4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0 )
+mesh = SubResource( 51 )
+skeleton = NodePath("")
+material/0 = ExtResource( 18 )
+
+[node name="bottlemid mesh" type="MeshInstance" parent="Building/Room 1/Props/Pickable bottle 4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0 )
+mesh = SubResource( 52 )
+skeleton = NodePath("")
+material/0 = ExtResource( 18 )
+
+[node name="bottlebody mesh" type="CollisionShape" parent="Building/Room 1/Props/Pickable bottle 4"]
+shape = SubResource( 53 )
+
+[node name="bottletop mesh" type="MeshInstance" parent="Building/Room 1/Props/Pickable bottle 4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0 )
+mesh = SubResource( 54 )
+skeleton = NodePath("")
+material/0 = ExtResource( 18 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Building/Room 1/Props/Pickable bottle 4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0 )
+shape = SubResource( 55 )
+
+[node name="Pickable bottle 5" parent="Building/Room 1/Props" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.26691, -1.725, 3.83221 )
+mass = 0.12
+gravity_scale = 0.1
+
+[node name="bottlebottom mesh" type="MeshInstance" parent="Building/Room 1/Props/Pickable bottle 5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0 )
+mesh = SubResource( 51 )
+skeleton = NodePath("")
+material/0 = ExtResource( 18 )
+
+[node name="bottlemid mesh" type="MeshInstance" parent="Building/Room 1/Props/Pickable bottle 5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0 )
+mesh = SubResource( 52 )
+skeleton = NodePath("")
+material/0 = ExtResource( 18 )
+
+[node name="bottlebody mesh" type="CollisionShape" parent="Building/Room 1/Props/Pickable bottle 5"]
+shape = SubResource( 53 )
+
+[node name="bottletop mesh" type="MeshInstance" parent="Building/Room 1/Props/Pickable bottle 5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0 )
+mesh = SubResource( 54 )
+skeleton = NodePath("")
+material/0 = ExtResource( 18 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Building/Room 1/Props/Pickable bottle 5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0 )
+shape = SubResource( 55 )
+
+[node name="Pickable bottle 6" parent="Building/Room 1/Props" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5287, -1.725, 3.96575 )
+mass = 0.12
+gravity_scale = 0.1
+
+[node name="bottlebottom mesh" type="MeshInstance" parent="Building/Room 1/Props/Pickable bottle 6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0 )
+mesh = SubResource( 51 )
+skeleton = NodePath("")
+material/0 = ExtResource( 18 )
+
+[node name="bottlemid mesh" type="MeshInstance" parent="Building/Room 1/Props/Pickable bottle 6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0 )
+mesh = SubResource( 52 )
+skeleton = NodePath("")
+material/0 = ExtResource( 18 )
+
+[node name="bottlebody mesh" type="CollisionShape" parent="Building/Room 1/Props/Pickable bottle 6"]
+shape = SubResource( 53 )
+
+[node name="bottletop mesh" type="MeshInstance" parent="Building/Room 1/Props/Pickable bottle 6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0 )
+mesh = SubResource( 54 )
+skeleton = NodePath("")
+material/0 = ExtResource( 18 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Building/Room 1/Props/Pickable bottle 6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0 )
+shape = SubResource( 55 )
+
+[node name="Pickable chair 1" parent="Building/Room 1/Props" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.673892, 0.618652 )
+physics_material_override = SubResource( 46 )
+gravity_scale = 0.2
+
+[node name="seat mesh" type="MeshInstance" parent="Building/Room 1/Props/Pickable chair 1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.27, 0 )
+mesh = SubResource( 38 )
+material/0 = SubResource( 41 )
+
+[node name="seat collision" type="CollisionShape" parent="Building/Room 1/Props/Pickable chair 1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.27, 0 )
+shape = SubResource( 42 )
+
+[node name="seatleg mesh 1" type="MeshInstance" parent="Building/Room 1/Props/Pickable chair 1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, -0.15 )
+mesh = SubResource( 43 )
+material/0 = SubResource( 45 )
+
+[node name="seatleg coll 1" type="CollisionShape" parent="Building/Room 1/Props/Pickable chair 1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, -0.15 )
+shape = SubResource( 44 )
+
+[node name="seatleg mesh 2" type="MeshInstance" parent="Building/Room 1/Props/Pickable chair 1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, 0.15 )
+mesh = SubResource( 43 )
+material/0 = SubResource( 45 )
+
+[node name="seatleg coll 2" type="CollisionShape" parent="Building/Room 1/Props/Pickable chair 1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, 0.15 )
+shape = SubResource( 44 )
+
+[node name="seatleg mesh 3" type="MeshInstance" parent="Building/Room 1/Props/Pickable chair 1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, 0.15 )
+mesh = SubResource( 43 )
+material/0 = SubResource( 45 )
+
+[node name="seatleg coll 3" type="CollisionShape" parent="Building/Room 1/Props/Pickable chair 1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, 0.15 )
+shape = SubResource( 44 )
+
+[node name="seatleg mesh 4" type="MeshInstance" parent="Building/Room 1/Props/Pickable chair 1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, -0.15 )
+mesh = SubResource( 43 )
+material/0 = SubResource( 45 )
+
+[node name="seatleg coll 4" type="CollisionShape" parent="Building/Room 1/Props/Pickable chair 1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, -0.15 )
+shape = SubResource( 44 )
+
+[node name="Pickable chair 2" parent="Building/Room 1/Props" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.11304, -2.525, 0.619 )
+physics_material_override = SubResource( 46 )
+gravity_scale = 0.2
+
+[node name="seat mesh" type="MeshInstance" parent="Building/Room 1/Props/Pickable chair 2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.27, 0 )
+mesh = SubResource( 38 )
+material/0 = SubResource( 41 )
+
+[node name="seat collision" type="CollisionShape" parent="Building/Room 1/Props/Pickable chair 2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.27, 0 )
+shape = SubResource( 42 )
+
+[node name="seatleg mesh 1" type="MeshInstance" parent="Building/Room 1/Props/Pickable chair 2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, -0.15 )
+mesh = SubResource( 43 )
+material/0 = SubResource( 45 )
+
+[node name="seatleg coll 1" type="CollisionShape" parent="Building/Room 1/Props/Pickable chair 2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, -0.15 )
+shape = SubResource( 44 )
+
+[node name="seatleg mesh 2" type="MeshInstance" parent="Building/Room 1/Props/Pickable chair 2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, 0.15 )
+mesh = SubResource( 43 )
+material/0 = SubResource( 45 )
+
+[node name="seatleg coll 2" type="CollisionShape" parent="Building/Room 1/Props/Pickable chair 2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, 0.15 )
+shape = SubResource( 44 )
+
+[node name="seatleg mesh 3" type="MeshInstance" parent="Building/Room 1/Props/Pickable chair 2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, 0.15 )
+mesh = SubResource( 43 )
+material/0 = SubResource( 45 )
+
+[node name="seatleg coll 3" type="CollisionShape" parent="Building/Room 1/Props/Pickable chair 2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, 0.15 )
+shape = SubResource( 44 )
+
+[node name="seatleg mesh 4" type="MeshInstance" parent="Building/Room 1/Props/Pickable chair 2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, -0.15 )
+mesh = SubResource( 43 )
+material/0 = SubResource( 45 )
+
+[node name="seatleg coll 4" type="CollisionShape" parent="Building/Room 1/Props/Pickable chair 2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, -0.15 )
+shape = SubResource( 44 )
+
+[node name="Pickable chair 3" parent="Building/Room 1/Props" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.06106, -2.525, 3.85863 )
+physics_material_override = SubResource( 46 )
+gravity_scale = 0.2
+
+[node name="seat mesh" type="MeshInstance" parent="Building/Room 1/Props/Pickable chair 3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.27, 0 )
+mesh = SubResource( 38 )
+material/0 = SubResource( 41 )
+
+[node name="seat collision" type="CollisionShape" parent="Building/Room 1/Props/Pickable chair 3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.27, 0 )
+shape = SubResource( 42 )
+
+[node name="seatleg mesh 1" type="MeshInstance" parent="Building/Room 1/Props/Pickable chair 3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, -0.15 )
+mesh = SubResource( 43 )
+material/0 = SubResource( 45 )
+
+[node name="seatleg coll 1" type="CollisionShape" parent="Building/Room 1/Props/Pickable chair 3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, -0.15 )
+shape = SubResource( 44 )
+
+[node name="seatleg mesh 2" type="MeshInstance" parent="Building/Room 1/Props/Pickable chair 3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, 0.15 )
+mesh = SubResource( 43 )
+material/0 = SubResource( 45 )
+
+[node name="seatleg coll 2" type="CollisionShape" parent="Building/Room 1/Props/Pickable chair 3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, 0.15 )
+shape = SubResource( 44 )
+
+[node name="seatleg mesh 3" type="MeshInstance" parent="Building/Room 1/Props/Pickable chair 3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, 0.15 )
+mesh = SubResource( 43 )
+material/0 = SubResource( 45 )
+
+[node name="seatleg coll 3" type="CollisionShape" parent="Building/Room 1/Props/Pickable chair 3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, 0.15 )
+shape = SubResource( 44 )
+
+[node name="seatleg mesh 4" type="MeshInstance" parent="Building/Room 1/Props/Pickable chair 3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, -0.15 )
+mesh = SubResource( 43 )
+material/0 = SubResource( 45 )
+
+[node name="seatleg coll 4" type="CollisionShape" parent="Building/Room 1/Props/Pickable chair 3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, -0.15 )
+shape = SubResource( 44 )
+
+[node name="Pickable chair 4" parent="Building/Room 1/Props" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0522, -2.525, 3.85863 )
+physics_material_override = SubResource( 46 )
+gravity_scale = 0.2
+
+[node name="seat mesh" type="MeshInstance" parent="Building/Room 1/Props/Pickable chair 4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.27, 0 )
+mesh = SubResource( 38 )
+material/0 = SubResource( 41 )
+
+[node name="seat collision" type="CollisionShape" parent="Building/Room 1/Props/Pickable chair 4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.27, 0 )
+shape = SubResource( 42 )
+
+[node name="seatleg mesh 1" type="MeshInstance" parent="Building/Room 1/Props/Pickable chair 4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, -0.15 )
+mesh = SubResource( 43 )
+material/0 = SubResource( 45 )
+
+[node name="seatleg coll 1" type="CollisionShape" parent="Building/Room 1/Props/Pickable chair 4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, -0.15 )
+shape = SubResource( 44 )
+
+[node name="seatleg mesh 2" type="MeshInstance" parent="Building/Room 1/Props/Pickable chair 4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, 0.15 )
+mesh = SubResource( 43 )
+material/0 = SubResource( 45 )
+
+[node name="seatleg coll 2" type="CollisionShape" parent="Building/Room 1/Props/Pickable chair 4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, 0.15 )
+shape = SubResource( 44 )
+
+[node name="seatleg mesh 3" type="MeshInstance" parent="Building/Room 1/Props/Pickable chair 4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, 0.15 )
+mesh = SubResource( 43 )
+material/0 = SubResource( 45 )
+
+[node name="seatleg coll 3" type="CollisionShape" parent="Building/Room 1/Props/Pickable chair 4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, 0.15 )
+shape = SubResource( 44 )
+
+[node name="seatleg mesh 4" type="MeshInstance" parent="Building/Room 1/Props/Pickable chair 4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, -0.15 )
+mesh = SubResource( 43 )
+material/0 = SubResource( 45 )
+
+[node name="seatleg coll 4" type="CollisionShape" parent="Building/Room 1/Props/Pickable chair 4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, -0.15 )
+shape = SubResource( 44 )
+
+[node name="Pickable chair 5" parent="Building/Room 1/Props" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.84723, -2.525, 0.0993152 )
+physics_material_override = SubResource( 46 )
+gravity_scale = 0.2
+
+[node name="seat mesh" type="MeshInstance" parent="Building/Room 1/Props/Pickable chair 5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.27, 0 )
+mesh = SubResource( 38 )
+material/0 = SubResource( 41 )
+
+[node name="seat collision" type="CollisionShape" parent="Building/Room 1/Props/Pickable chair 5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.27, 0 )
+shape = SubResource( 42 )
+
+[node name="seatleg mesh 1" type="MeshInstance" parent="Building/Room 1/Props/Pickable chair 5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, -0.15 )
+mesh = SubResource( 43 )
+material/0 = SubResource( 45 )
+
+[node name="seatleg coll 1" type="CollisionShape" parent="Building/Room 1/Props/Pickable chair 5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, -0.15 )
+shape = SubResource( 44 )
+
+[node name="seatleg mesh 2" type="MeshInstance" parent="Building/Room 1/Props/Pickable chair 5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, 0.15 )
+mesh = SubResource( 43 )
+material/0 = SubResource( 45 )
+
+[node name="seatleg coll 2" type="CollisionShape" parent="Building/Room 1/Props/Pickable chair 5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, 0.15 )
+shape = SubResource( 44 )
+
+[node name="seatleg mesh 3" type="MeshInstance" parent="Building/Room 1/Props/Pickable chair 5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, 0.15 )
+mesh = SubResource( 43 )
+material/0 = SubResource( 45 )
+
+[node name="seatleg coll 3" type="CollisionShape" parent="Building/Room 1/Props/Pickable chair 5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, 0.15 )
+shape = SubResource( 44 )
+
+[node name="seatleg mesh 4" type="MeshInstance" parent="Building/Room 1/Props/Pickable chair 5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, -0.15 )
+mesh = SubResource( 43 )
+material/0 = SubResource( 45 )
+
+[node name="seatleg coll 4" type="CollisionShape" parent="Building/Room 1/Props/Pickable chair 5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, -0.15 )
+shape = SubResource( 44 )
+
+[node name="Pickable table 1" parent="Building/Room 1/Props" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 1.68252 )
+mass = 17.86
+physics_material_override = SubResource( 37 )
+gravity_scale = 0.3
+
+[node name="tabletopmesh" type="MeshInstance" parent="Building/Room 1/Props/Pickable table 1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.462, 0 )
+mesh = SubResource( 30 )
+material/0 = SubResource( 34 )
+
+[node name="tabletopcollision" type="CollisionShape" parent="Building/Room 1/Props/Pickable table 1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.462, 0 )
+shape = SubResource( 31 )
+
+[node name="tablelegmesh 1" type="MeshInstance" parent="Building/Room 1/Props/Pickable table 1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0 )
+mesh = SubResource( 32 )
+material/0 = SubResource( 35 )
+
+[node name="tablelegcollision 1" type="CollisionShape" parent="Building/Room 1/Props/Pickable table 1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0 )
+shape = SubResource( 33 )
+
+[node name="tablelegmesh 2" type="MeshInstance" parent="Building/Room 1/Props/Pickable table 1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0 )
+mesh = SubResource( 32 )
+material/0 = SubResource( 36 )
+
+[node name="tablelegcollision 2" type="CollisionShape" parent="Building/Room 1/Props/Pickable table 1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0 )
+shape = SubResource( 33 )
+
+[node name="Pickable table 2" parent="Building/Room 1/Props" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.575, -2.35, 4.09646 )
+mass = 17.86
+physics_material_override = SubResource( 37 )
+gravity_scale = 0.3
+
+[node name="tabletopmesh" type="MeshInstance" parent="Building/Room 1/Props/Pickable table 2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.462, 0 )
+mesh = SubResource( 30 )
+material/0 = SubResource( 34 )
+
+[node name="tabletopcollision" type="CollisionShape" parent="Building/Room 1/Props/Pickable table 2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.462, 0 )
+shape = SubResource( 31 )
+
+[node name="tablelegmesh 1" type="MeshInstance" parent="Building/Room 1/Props/Pickable table 2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0 )
+mesh = SubResource( 32 )
+material/0 = SubResource( 35 )
+
+[node name="tablelegcollision 1" type="CollisionShape" parent="Building/Room 1/Props/Pickable table 2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0 )
+shape = SubResource( 33 )
+
+[node name="tablelegmesh 2" type="MeshInstance" parent="Building/Room 1/Props/Pickable table 2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0 )
+mesh = SubResource( 32 )
+material/0 = SubResource( 36 )
+
+[node name="tablelegcollision 2" type="CollisionShape" parent="Building/Room 1/Props/Pickable table 2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0 )
+shape = SubResource( 33 )
+
+[node name="Pickable table 3" parent="Building/Room 1/Props" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.575, -2.35, 0.775709 )
+mass = 17.86
+physics_material_override = SubResource( 37 )
+gravity_scale = 0.3
+
+[node name="tabletopmesh" type="MeshInstance" parent="Building/Room 1/Props/Pickable table 3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.462, 0 )
+mesh = SubResource( 30 )
+material/0 = SubResource( 34 )
+
+[node name="tabletopcollision" type="CollisionShape" parent="Building/Room 1/Props/Pickable table 3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.462, 0 )
+shape = SubResource( 31 )
+
+[node name="tablelegmesh 1" type="MeshInstance" parent="Building/Room 1/Props/Pickable table 3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0 )
+mesh = SubResource( 32 )
+material/0 = SubResource( 35 )
+
+[node name="tablelegcollision 1" type="CollisionShape" parent="Building/Room 1/Props/Pickable table 3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0 )
+shape = SubResource( 33 )
+
+[node name="tablelegmesh 2" type="MeshInstance" parent="Building/Room 1/Props/Pickable table 3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0 )
+mesh = SubResource( 32 )
+material/0 = SubResource( 36 )
+
+[node name="tablelegcollision 2" type="CollisionShape" parent="Building/Room 1/Props/Pickable table 3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0 )
+shape = SubResource( 33 )
+
+[node name="Pickable table 4" parent="Building/Room 1/Props" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.575, -2.35, -2.3122 )
+mass = 17.86
+physics_material_override = SubResource( 37 )
+gravity_scale = 0.3
+
+[node name="tabletopmesh" type="MeshInstance" parent="Building/Room 1/Props/Pickable table 4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.462, 0 )
+mesh = SubResource( 30 )
+material/0 = SubResource( 34 )
+
+[node name="tabletopcollision" type="CollisionShape" parent="Building/Room 1/Props/Pickable table 4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.462, 0 )
+shape = SubResource( 31 )
+
+[node name="tablelegmesh 1" type="MeshInstance" parent="Building/Room 1/Props/Pickable table 4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0 )
+mesh = SubResource( 32 )
+material/0 = SubResource( 35 )
+
+[node name="tablelegcollision 1" type="CollisionShape" parent="Building/Room 1/Props/Pickable table 4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0 )
+shape = SubResource( 33 )
+
+[node name="tablelegmesh 2" type="MeshInstance" parent="Building/Room 1/Props/Pickable table 4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0 )
+mesh = SubResource( 32 )
+material/0 = SubResource( 36 )
+
+[node name="tablelegcollision 2" type="CollisionShape" parent="Building/Room 1/Props/Pickable table 4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0 )
+shape = SubResource( 33 )
+
+[node name="Pickable table 5" parent="Building/Room 1/Props" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.63913, -2.35, 4.09646 )
+mass = 17.86
+physics_material_override = SubResource( 37 )
+gravity_scale = 0.3
+
+[node name="tabletopmesh" type="MeshInstance" parent="Building/Room 1/Props/Pickable table 5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.462, 0 )
+mesh = SubResource( 30 )
+material/0 = SubResource( 34 )
+
+[node name="tabletopcollision" type="CollisionShape" parent="Building/Room 1/Props/Pickable table 5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.462, 0 )
+shape = SubResource( 31 )
+
+[node name="tablelegmesh 1" type="MeshInstance" parent="Building/Room 1/Props/Pickable table 5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0 )
+mesh = SubResource( 32 )
+material/0 = SubResource( 35 )
+
+[node name="tablelegcollision 1" type="CollisionShape" parent="Building/Room 1/Props/Pickable table 5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0 )
+shape = SubResource( 33 )
+
+[node name="tablelegmesh 2" type="MeshInstance" parent="Building/Room 1/Props/Pickable table 5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0 )
+mesh = SubResource( 32 )
+material/0 = SubResource( 36 )
+
+[node name="tablelegcollision 2" type="CollisionShape" parent="Building/Room 1/Props/Pickable table 5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0 )
+shape = SubResource( 33 )
+
+[node name="Pickable table 6" parent="Building/Room 1/Props" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.63913, -2.35, 0.775709 )
+mass = 17.86
+physics_material_override = SubResource( 37 )
+gravity_scale = 0.3
+
+[node name="tabletopmesh" type="MeshInstance" parent="Building/Room 1/Props/Pickable table 6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.462, 0 )
+mesh = SubResource( 30 )
+material/0 = SubResource( 34 )
+
+[node name="tabletopcollision" type="CollisionShape" parent="Building/Room 1/Props/Pickable table 6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.462, 0 )
+shape = SubResource( 31 )
+
+[node name="tablelegmesh 1" type="MeshInstance" parent="Building/Room 1/Props/Pickable table 6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0 )
+mesh = SubResource( 32 )
+material/0 = SubResource( 35 )
+
+[node name="tablelegcollision 1" type="CollisionShape" parent="Building/Room 1/Props/Pickable table 6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0 )
+shape = SubResource( 33 )
+
+[node name="tablelegmesh 2" type="MeshInstance" parent="Building/Room 1/Props/Pickable table 6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0 )
+mesh = SubResource( 32 )
+material/0 = SubResource( 36 )
+
+[node name="tablelegcollision 2" type="CollisionShape" parent="Building/Room 1/Props/Pickable table 6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0 )
+shape = SubResource( 33 )
+
+[node name="Pickable table 7" parent="Building/Room 1/Props" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.63913, -2.35, -2.3122 )
+mass = 17.86
+physics_material_override = SubResource( 37 )
+gravity_scale = 0.3
+
+[node name="tabletopmesh" type="MeshInstance" parent="Building/Room 1/Props/Pickable table 7"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.462, 0 )
+mesh = SubResource( 30 )
+material/0 = SubResource( 34 )
+
+[node name="tabletopcollision" type="CollisionShape" parent="Building/Room 1/Props/Pickable table 7"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.462, 0 )
+shape = SubResource( 31 )
+
+[node name="tablelegmesh 1" type="MeshInstance" parent="Building/Room 1/Props/Pickable table 7"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0 )
+mesh = SubResource( 32 )
+material/0 = SubResource( 35 )
+
+[node name="tablelegcollision 1" type="CollisionShape" parent="Building/Room 1/Props/Pickable table 7"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0 )
+shape = SubResource( 33 )
+
+[node name="tablelegmesh 2" type="MeshInstance" parent="Building/Room 1/Props/Pickable table 7"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0 )
+mesh = SubResource( 32 )
+material/0 = SubResource( 36 )
+
+[node name="tablelegcollision 2" type="CollisionShape" parent="Building/Room 1/Props/Pickable table 7"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0 )
+shape = SubResource( 33 )
+
+[node name="Pickable Flashlight" parent="Building/Room 1/Props" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 2.98023e-08, -1, 0, 1, 2.98023e-08, 0, 0, 2 )
+gravity_scale = 0.1
+
+[node name="flashlight base" type="MeshInstance" parent="Building/Room 1/Props/Pickable Flashlight"]
+mesh = SubResource( 73 )
+material/0 = SubResource( 75 )
+
+[node name="Collision base" type="CollisionShape" parent="Building/Room 1/Props/Pickable Flashlight"]
+shape = SubResource( 76 )
+
+[node name="flashlight top" type="MeshInstance" parent="Building/Room 1/Props/Pickable Flashlight"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0 )
+mesh = SubResource( 74 )
+material/0 = SubResource( 77 )
+
+[node name="main SpotLight" type="SpotLight" parent="Building/Room 1/Props/Pickable Flashlight"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.00045836, 0.301735, 0 )
+light_energy = 2.231
+shadow_enabled = true
+spot_range = 3.121
+spot_angle = 57.59
+
+[node name="SpotLight2" type="SpotLight" parent="Building/Room 1/Props/Pickable Flashlight"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.363646, 0 )
+light_energy = 12.413
+light_indirect_energy = 1.336
+spot_range = 0.171
+
+[node name="CollisionShape2" type="CollisionShape" parent="Building/Room 1/Props/Pickable Flashlight"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.22, 0 )
+shape = SubResource( 78 )
+
+[node name="Room 2" type="Spatial" parent="Building"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 16.5, 0, -16 )
+
+[node name="Room 2 maininterior" type="Spatial" parent="Building/Room 2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.500002 )
+
+[node name="Wall E" type="StaticBody" parent="Building/Room 2/Room 2 maininterior"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, -0.75, 0 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/Room 2/Room 2 maininterior/Wall E"]
+mesh = SubResource( 7 )
+material/0 = ExtResource( 17 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/Room 2/Room 2 maininterior/Wall E"]
+shape = SubResource( 9 )
+
+[node name="Wall W" type="StaticBody" parent="Building/Room 2/Room 2 maininterior"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, -0.75, 0 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/Room 2/Room 2 maininterior/Wall W"]
+mesh = SubResource( 7 )
+material/0 = ExtResource( 17 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/Room 2/Room 2 maininterior/Wall W"]
+shape = SubResource( 9 )
+
+[node name="Ceiling" type="StaticBody" parent="Building/Room 2/Room 2 maininterior"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/Room 2/Room 2 maininterior/Ceiling"]
+shape = SubResource( 10 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/Room 2/Room 2 maininterior/Ceiling"]
+mesh = SubResource( 11 )
+
+[node name="Roof" type="StaticBody" parent="Building/Room 2/Room 2 maininterior"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/Room 2/Room 2 maininterior/Roof"]
+mesh = SubResource( 62 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/Room 2/Room 2 maininterior/Roof"]
+shape = SubResource( 63 )
+
+[node name="Wall with doorway" type="Spatial" parent="Building/Room 2"]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0.500002 )
+
+[node name="Wall N 1s" type="StaticBody" parent="Building/Room 2/Wall with doorway"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, -0.75, -5.125 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/Room 2/Wall with doorway/Wall N 1s"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0 )
+mesh = SubResource( 16 )
+material/0 = ExtResource( 17 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/Room 2/Wall with doorway/Wall N 1s"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0 )
+shape = SubResource( 21 )
+
+[node name="Wall N 2s" type="StaticBody" parent="Building/Room 2/Wall with doorway"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, -0.75, -5.125 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/Room 2/Wall with doorway/Wall N 2s"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0 )
+mesh = SubResource( 16 )
+material/0 = ExtResource( 17 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/Room 2/Wall with doorway/Wall N 2s"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0 )
+shape = SubResource( 21 )
+
+[node name="Floor" type="StaticBody" parent="Building/Room 2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.25, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/Room 2/Floor"]
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/Room 2/Floor"]
+mesh = SubResource( 2 )
+skeleton = NodePath("")
+material/0 = ExtResource( 19 )
+
+[node name="Farwall" type="StaticBody" parent="Building/Room 2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.75, -4.625 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/Room 2/Farwall"]
+mesh = SubResource( 91 )
+material/0 = ExtResource( 16 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/Room 2/Farwall"]
+shape = SubResource( 92 )
+
+[node name="Props rm2" type="Spatial" parent="Building/Room 2"]
+
+[node name="Pickable table 1" parent="Building/Room 2/Props rm2" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.35, 1.683 )
+mass = 17.86
+physics_material_override = SubResource( 37 )
+gravity_scale = 0.3
+
+[node name="tabletopmesh" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable table 1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.462, 0 )
+mesh = SubResource( 30 )
+material/0 = SubResource( 34 )
+
+[node name="tabletopcollision" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable table 1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.462, 0 )
+shape = SubResource( 31 )
+
+[node name="tablelegmesh 1" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable table 1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0 )
+mesh = SubResource( 32 )
+material/0 = SubResource( 35 )
+
+[node name="tablelegcollision 1" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable table 1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0 )
+shape = SubResource( 33 )
+
+[node name="tablelegmesh 2" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable table 1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0 )
+mesh = SubResource( 32 )
+material/0 = SubResource( 36 )
+
+[node name="tablelegcollision 2" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable table 1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0 )
+shape = SubResource( 33 )
+
+[node name="Pickable table 2" parent="Building/Room 2/Props rm2" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.425, 1.683 )
+mass = 17.86
+physics_material_override = SubResource( 37 )
+gravity_scale = 0.3
+
+[node name="tabletopmesh" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable table 2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.462, 0 )
+mesh = SubResource( 30 )
+material/0 = SubResource( 34 )
+
+[node name="tabletopcollision" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable table 2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.462, 0 )
+shape = SubResource( 31 )
+
+[node name="tablelegmesh 1" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable table 2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0 )
+mesh = SubResource( 32 )
+material/0 = SubResource( 35 )
+
+[node name="tablelegcollision 1" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable table 2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0 )
+shape = SubResource( 33 )
+
+[node name="tablelegmesh 2" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable table 2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0 )
+mesh = SubResource( 32 )
+material/0 = SubResource( 36 )
+
+[node name="tablelegcollision 2" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable table 2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0 )
+shape = SubResource( 33 )
+
+[node name="Pickable table 3" parent="Building/Room 2/Props rm2" instance=ExtResource( 8 )]
+transform = Transform( 1, 4.2222e-08, -3.2398e-08, -4.2222e-08, 0.258819, -0.965926, -3.23981e-08, 0.965926, 0.258819, 0, -2.32478, 3.25676 )
+mass = 17.86
+physics_material_override = SubResource( 37 )
+gravity_scale = 0.3
+
+[node name="tabletopmesh" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable table 3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.462, 0 )
+mesh = SubResource( 30 )
+material/0 = SubResource( 34 )
+
+[node name="tabletopcollision" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable table 3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.462, 0 )
+shape = SubResource( 31 )
+
+[node name="tablelegmesh 1" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable table 3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0 )
+mesh = SubResource( 32 )
+material/0 = SubResource( 35 )
+
+[node name="tablelegcollision 1" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable table 3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0 )
+shape = SubResource( 33 )
+
+[node name="tablelegmesh 2" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable table 3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0 )
+mesh = SubResource( 32 )
+material/0 = SubResource( 36 )
+
+[node name="tablelegcollision 2" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable table 3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0 )
+shape = SubResource( 33 )
+
+[node name="Pickable table 4" parent="Building/Room 2/Props rm2" instance=ExtResource( 8 )]
+transform = Transform( 0.155366, 0, 0.987857, 0, 1, 0, -0.987857, 0, 0.155366, -2.0291, -2.35, 2.17991 )
+mass = 17.86
+physics_material_override = SubResource( 37 )
+gravity_scale = 0.3
+
+[node name="tabletopmesh" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable table 4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.462, 0 )
+mesh = SubResource( 30 )
+material/0 = SubResource( 34 )
+
+[node name="tabletopcollision" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable table 4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.462, 0 )
+shape = SubResource( 31 )
+
+[node name="tablelegmesh 1" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable table 4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0 )
+mesh = SubResource( 32 )
+material/0 = SubResource( 35 )
+
+[node name="tablelegcollision 1" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable table 4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0 )
+shape = SubResource( 33 )
+
+[node name="tablelegmesh 2" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable table 4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0 )
+mesh = SubResource( 32 )
+material/0 = SubResource( 36 )
+
+[node name="tablelegcollision 2" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable table 4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0 )
+shape = SubResource( 33 )
+
+[node name="Pickable table 5" parent="Building/Room 2/Props rm2" instance=ExtResource( 8 )]
+transform = Transform( 0.24116, -0.970485, 3.317e-08, 0.970485, 0.24116, -4.24213e-08, 3.317e-08, 4.24213e-08, 1, 4.35318, -1.62319, 1.68302 )
+mass = 17.86
+physics_material_override = SubResource( 37 )
+gravity_scale = 0.3
+
+[node name="tabletopmesh" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable table 5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.462, 0 )
+mesh = SubResource( 30 )
+material/0 = SubResource( 34 )
+
+[node name="tabletopcollision" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable table 5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.462, 0 )
+shape = SubResource( 31 )
+
+[node name="tablelegmesh 1" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable table 5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0 )
+mesh = SubResource( 32 )
+material/0 = SubResource( 35 )
+
+[node name="tablelegcollision 1" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable table 5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0 )
+shape = SubResource( 33 )
+
+[node name="tablelegmesh 2" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable table 5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0 )
+mesh = SubResource( 32 )
+material/0 = SubResource( 36 )
+
+[node name="tablelegcollision 2" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable table 5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0 )
+shape = SubResource( 33 )
+
+[node name="Pickable table 6" parent="Building/Room 2/Props rm2" instance=ExtResource( 8 )]
+transform = Transform( 0.24116, -0.970485, 3.317e-08, 0.970485, 0.24116, -4.24213e-08, 3.317e-08, 4.24213e-08, 1, 4.35318, -1.62319, 3.04017 )
+mass = 17.86
+physics_material_override = SubResource( 37 )
+gravity_scale = 0.3
+
+[node name="tabletopmesh" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable table 6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.462, 0 )
+mesh = SubResource( 30 )
+material/0 = SubResource( 34 )
+
+[node name="tabletopcollision" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable table 6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.462, 0 )
+shape = SubResource( 31 )
+
+[node name="tablelegmesh 1" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable table 6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0 )
+mesh = SubResource( 32 )
+material/0 = SubResource( 35 )
+
+[node name="tablelegcollision 1" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable table 6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0 )
+shape = SubResource( 33 )
+
+[node name="tablelegmesh 2" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable table 6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0 )
+mesh = SubResource( 32 )
+material/0 = SubResource( 36 )
+
+[node name="tablelegcollision 2" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable table 6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0 )
+shape = SubResource( 33 )
+
+[node name="Pickable ball 1" parent="Building/Room 2/Props rm2" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.25, -1.34 )
+mass = 0.131633
+physics_material_override = SubResource( 29 )
+gravity_scale = 0.1
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable ball 1"]
+mesh = SubResource( 25 )
+skeleton = NodePath("")
+material/0 = SubResource( 28 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable ball 1"]
+shape = SubResource( 26 )
+
+[node name="Pickable ball 2" parent="Building/Room 2/Props rm2" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.05475, -2.25, -1.34 )
+mass = 0.131633
+physics_material_override = SubResource( 29 )
+gravity_scale = 0.1
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable ball 2"]
+mesh = SubResource( 25 )
+skeleton = NodePath("")
+material/0 = SubResource( 28 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable ball 2"]
+shape = SubResource( 26 )
+
+[node name="Pickable ball 3" parent="Building/Room 2/Props rm2" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.25, -2.43004 )
+mass = 0.131633
+physics_material_override = SubResource( 29 )
+gravity_scale = 0.1
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable ball 3"]
+mesh = SubResource( 25 )
+skeleton = NodePath("")
+material/0 = SubResource( 28 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable ball 3"]
+shape = SubResource( 26 )
+
+[node name="Pickable ball 4" parent="Building/Room 2/Props rm2" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.06572, -2.25, -2.39387 )
+mass = 0.131633
+physics_material_override = SubResource( 29 )
+gravity_scale = 0.1
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable ball 4"]
+mesh = SubResource( 25 )
+skeleton = NodePath("")
+material/0 = SubResource( 28 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable ball 4"]
+shape = SubResource( 26 )
+
+[node name="Pickable ball 5" parent="Building/Room 2/Props rm2" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.06479, -2.25, -1.84422 )
+mass = 0.131633
+physics_material_override = SubResource( 29 )
+gravity_scale = 0.1
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable ball 5"]
+mesh = SubResource( 25 )
+skeleton = NodePath("")
+material/0 = SubResource( 28 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable ball 5"]
+shape = SubResource( 26 )
+
+[node name="Pickable ball 6" parent="Building/Room 2/Props rm2" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.01004, -2.25, -1.84422 )
+mass = 0.131633
+physics_material_override = SubResource( 29 )
+gravity_scale = 0.1
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable ball 6"]
+mesh = SubResource( 25 )
+skeleton = NodePath("")
+material/0 = SubResource( 28 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable ball 6"]
+shape = SubResource( 26 )
+
+[node name="Pickable ball 7" parent="Building/Room 2/Props rm2" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.06479, -2.25, -2.93426 )
+mass = 0.131633
+physics_material_override = SubResource( 29 )
+gravity_scale = 0.1
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable ball 7"]
+mesh = SubResource( 25 )
+skeleton = NodePath("")
+material/0 = SubResource( 28 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable ball 7"]
+shape = SubResource( 26 )
+
+[node name="Pickable ball 8" parent="Building/Room 2/Props rm2" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.999068, -2.25, -2.8981 )
+mass = 0.131633
+physics_material_override = SubResource( 29 )
+gravity_scale = 0.1
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable ball 8"]
+mesh = SubResource( 25 )
+skeleton = NodePath("")
+material/0 = SubResource( 28 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable ball 8"]
+shape = SubResource( 26 )
+
+[node name="Pickable ball 9" parent="Building/Room 2/Props rm2" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.03713, -2.25, -0.797892 )
+mass = 0.131633
+physics_material_override = SubResource( 29 )
+gravity_scale = 0.1
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable ball 9"]
+mesh = SubResource( 25 )
+skeleton = NodePath("")
+material/0 = SubResource( 28 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable ball 9"]
+shape = SubResource( 26 )
+
+[node name="Pickable ball 10" parent="Building/Room 2/Props rm2" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.09189, -2.25, -0.797892 )
+mass = 0.131633
+physics_material_override = SubResource( 29 )
+gravity_scale = 0.1
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable ball 10"]
+mesh = SubResource( 25 )
+skeleton = NodePath("")
+material/0 = SubResource( 28 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable ball 10"]
+shape = SubResource( 26 )
+
+[node name="Pickable ball 11" parent="Building/Room 2/Props rm2" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.03713, -2.25, -1.88793 )
+mass = 0.131633
+physics_material_override = SubResource( 29 )
+gravity_scale = 0.1
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable ball 11"]
+mesh = SubResource( 25 )
+skeleton = NodePath("")
+material/0 = SubResource( 28 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable ball 11"]
+shape = SubResource( 26 )
+
+[node name="Pickable ball 12" parent="Building/Room 2/Props rm2" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.10286, -2.25, -1.85176 )
+mass = 0.131633
+physics_material_override = SubResource( 29 )
+gravity_scale = 0.1
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable ball 12"]
+mesh = SubResource( 25 )
+skeleton = NodePath("")
+material/0 = SubResource( 28 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable ball 12"]
+shape = SubResource( 26 )
+
+[node name="Pickable chair 1" parent="Building/Room 2/Props rm2" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.06106, -2.525, 3.85863 )
+physics_material_override = SubResource( 46 )
+gravity_scale = 0.2
+
+[node name="seat mesh" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable chair 1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.27, 0 )
+mesh = SubResource( 38 )
+material/0 = SubResource( 41 )
+
+[node name="seat collision" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable chair 1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.27, 0 )
+shape = SubResource( 42 )
+
+[node name="seatleg mesh 1" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable chair 1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, -0.15 )
+mesh = SubResource( 43 )
+material/0 = SubResource( 45 )
+
+[node name="seatleg coll 1" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable chair 1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, -0.15 )
+shape = SubResource( 44 )
+
+[node name="seatleg mesh 2" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable chair 1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, 0.15 )
+mesh = SubResource( 43 )
+material/0 = SubResource( 45 )
+
+[node name="seatleg coll 2" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable chair 1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, 0.15 )
+shape = SubResource( 44 )
+
+[node name="seatleg mesh 3" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable chair 1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, 0.15 )
+mesh = SubResource( 43 )
+material/0 = SubResource( 45 )
+
+[node name="seatleg coll 3" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable chair 1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, 0.15 )
+shape = SubResource( 44 )
+
+[node name="seatleg mesh 4" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable chair 1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, -0.15 )
+mesh = SubResource( 43 )
+material/0 = SubResource( 45 )
+
+[node name="seatleg coll 4" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable chair 1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, -0.15 )
+shape = SubResource( 44 )
+
+[node name="Pickable chair 2" parent="Building/Room 2/Props rm2" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.09866, -2.525, 3.16447 )
+physics_material_override = SubResource( 46 )
+gravity_scale = 0.2
+
+[node name="seat mesh" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable chair 2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.27, 0 )
+mesh = SubResource( 38 )
+material/0 = SubResource( 41 )
+
+[node name="seat collision" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable chair 2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.27, 0 )
+shape = SubResource( 42 )
+
+[node name="seatleg mesh 1" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable chair 2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, -0.15 )
+mesh = SubResource( 43 )
+material/0 = SubResource( 45 )
+
+[node name="seatleg coll 1" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable chair 2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, -0.15 )
+shape = SubResource( 44 )
+
+[node name="seatleg mesh 2" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable chair 2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, 0.15 )
+mesh = SubResource( 43 )
+material/0 = SubResource( 45 )
+
+[node name="seatleg coll 2" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable chair 2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, 0.15 )
+shape = SubResource( 44 )
+
+[node name="seatleg mesh 3" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable chair 2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, 0.15 )
+mesh = SubResource( 43 )
+material/0 = SubResource( 45 )
+
+[node name="seatleg coll 3" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable chair 2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, 0.15 )
+shape = SubResource( 44 )
+
+[node name="seatleg mesh 4" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable chair 2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, -0.15 )
+mesh = SubResource( 43 )
+material/0 = SubResource( 45 )
+
+[node name="seatleg coll 4" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable chair 2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, -0.15 )
+shape = SubResource( 44 )
+
+[node name="Pickable chair 3" parent="Building/Room 2/Props rm2" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.09866, -2.525, 2.46501 )
+physics_material_override = SubResource( 46 )
+gravity_scale = 0.2
+
+[node name="seat mesh" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable chair 3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.27, 0 )
+mesh = SubResource( 38 )
+material/0 = SubResource( 41 )
+
+[node name="seat collision" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable chair 3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.27, 0 )
+shape = SubResource( 42 )
+
+[node name="seatleg mesh 1" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable chair 3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, -0.15 )
+mesh = SubResource( 43 )
+material/0 = SubResource( 45 )
+
+[node name="seatleg coll 1" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable chair 3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, -0.15 )
+shape = SubResource( 44 )
+
+[node name="seatleg mesh 2" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable chair 3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, 0.15 )
+mesh = SubResource( 43 )
+material/0 = SubResource( 45 )
+
+[node name="seatleg coll 2" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable chair 3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, 0.15 )
+shape = SubResource( 44 )
+
+[node name="seatleg mesh 3" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable chair 3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, 0.15 )
+mesh = SubResource( 43 )
+material/0 = SubResource( 45 )
+
+[node name="seatleg coll 3" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable chair 3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, 0.15 )
+shape = SubResource( 44 )
+
+[node name="seatleg mesh 4" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable chair 3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, -0.15 )
+mesh = SubResource( 43 )
+material/0 = SubResource( 45 )
+
+[node name="seatleg coll 4" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable chair 3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, -0.15 )
+shape = SubResource( 44 )
+
+[node name="Pickable chair 4" parent="Building/Room 2/Props rm2" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.09866, -2.525, 1.78437 )
+physics_material_override = SubResource( 46 )
+gravity_scale = 0.2
+
+[node name="seat mesh" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable chair 4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.27, 0 )
+mesh = SubResource( 38 )
+material/0 = SubResource( 41 )
+
+[node name="seat collision" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable chair 4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.27, 0 )
+shape = SubResource( 42 )
+
+[node name="seatleg mesh 1" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable chair 4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, -0.15 )
+mesh = SubResource( 43 )
+material/0 = SubResource( 45 )
+
+[node name="seatleg coll 1" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable chair 4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, -0.15 )
+shape = SubResource( 44 )
+
+[node name="seatleg mesh 2" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable chair 4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, 0.15 )
+mesh = SubResource( 43 )
+material/0 = SubResource( 45 )
+
+[node name="seatleg coll 2" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable chair 4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, 0.15 )
+shape = SubResource( 44 )
+
+[node name="seatleg mesh 3" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable chair 4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, 0.15 )
+mesh = SubResource( 43 )
+material/0 = SubResource( 45 )
+
+[node name="seatleg coll 3" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable chair 4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, 0.15 )
+shape = SubResource( 44 )
+
+[node name="seatleg mesh 4" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable chair 4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, -0.15 )
+mesh = SubResource( 43 )
+material/0 = SubResource( 45 )
+
+[node name="seatleg coll 4" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable chair 4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, -0.15 )
+shape = SubResource( 44 )
+
+[node name="Pickable chair 5" parent="Building/Room 2/Props rm2" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.09866, -1.97915, 3.51814 )
+physics_material_override = SubResource( 46 )
+gravity_scale = 0.2
+
+[node name="seat mesh" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable chair 5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.27, 0 )
+mesh = SubResource( 38 )
+material/0 = SubResource( 41 )
+
+[node name="seat collision" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable chair 5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.27, 0 )
+shape = SubResource( 42 )
+
+[node name="seatleg mesh 1" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable chair 5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, -0.15 )
+mesh = SubResource( 43 )
+material/0 = SubResource( 45 )
+
+[node name="seatleg coll 1" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable chair 5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, -0.15 )
+shape = SubResource( 44 )
+
+[node name="seatleg mesh 2" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable chair 5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, 0.15 )
+mesh = SubResource( 43 )
+material/0 = SubResource( 45 )
+
+[node name="seatleg coll 2" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable chair 5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, 0.15 )
+shape = SubResource( 44 )
+
+[node name="seatleg mesh 3" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable chair 5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, 0.15 )
+mesh = SubResource( 43 )
+material/0 = SubResource( 45 )
+
+[node name="seatleg coll 3" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable chair 5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, 0.15 )
+shape = SubResource( 44 )
+
+[node name="seatleg mesh 4" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable chair 5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, -0.15 )
+mesh = SubResource( 43 )
+material/0 = SubResource( 45 )
+
+[node name="seatleg coll 4" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable chair 5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, -0.15 )
+shape = SubResource( 44 )
+
+[node name="Pickable chair 6" parent="Building/Room 2/Props rm2" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.09866, -1.97915, 2.81868 )
+physics_material_override = SubResource( 46 )
+gravity_scale = 0.2
+
+[node name="seat mesh" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable chair 6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.27, 0 )
+mesh = SubResource( 38 )
+material/0 = SubResource( 41 )
+
+[node name="seat collision" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable chair 6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.27, 0 )
+shape = SubResource( 42 )
+
+[node name="seatleg mesh 1" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable chair 6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, -0.15 )
+mesh = SubResource( 43 )
+material/0 = SubResource( 45 )
+
+[node name="seatleg coll 1" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable chair 6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, -0.15 )
+shape = SubResource( 44 )
+
+[node name="seatleg mesh 2" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable chair 6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, 0.15 )
+mesh = SubResource( 43 )
+material/0 = SubResource( 45 )
+
+[node name="seatleg coll 2" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable chair 6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, 0.15 )
+shape = SubResource( 44 )
+
+[node name="seatleg mesh 3" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable chair 6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, 0.15 )
+mesh = SubResource( 43 )
+material/0 = SubResource( 45 )
+
+[node name="seatleg coll 3" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable chair 6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, 0.15 )
+shape = SubResource( 44 )
+
+[node name="seatleg mesh 4" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable chair 6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, -0.15 )
+mesh = SubResource( 43 )
+material/0 = SubResource( 45 )
+
+[node name="seatleg coll 4" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable chair 6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, -0.15 )
+shape = SubResource( 44 )
+
+[node name="Pickable chair 7" parent="Building/Room 2/Props rm2" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.09866, -1.97915, 2.13804 )
+physics_material_override = SubResource( 46 )
+gravity_scale = 0.2
+
+[node name="seat mesh" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable chair 7"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.27, 0 )
+mesh = SubResource( 38 )
+material/0 = SubResource( 41 )
+
+[node name="seat collision" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable chair 7"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.27, 0 )
+shape = SubResource( 42 )
+
+[node name="seatleg mesh 1" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable chair 7"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, -0.15 )
+mesh = SubResource( 43 )
+material/0 = SubResource( 45 )
+
+[node name="seatleg coll 1" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable chair 7"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, -0.15 )
+shape = SubResource( 44 )
+
+[node name="seatleg mesh 2" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable chair 7"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, 0.15 )
+mesh = SubResource( 43 )
+material/0 = SubResource( 45 )
+
+[node name="seatleg coll 2" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable chair 7"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, 0.15 )
+shape = SubResource( 44 )
+
+[node name="seatleg mesh 3" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable chair 7"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, 0.15 )
+mesh = SubResource( 43 )
+material/0 = SubResource( 45 )
+
+[node name="seatleg coll 3" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable chair 7"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, 0.15 )
+shape = SubResource( 44 )
+
+[node name="seatleg mesh 4" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable chair 7"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, -0.15 )
+mesh = SubResource( 43 )
+material/0 = SubResource( 45 )
+
+[node name="seatleg coll 4" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable chair 7"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, -0.15 )
+shape = SubResource( 44 )
+
+[node name="Pickable chair 8" parent="Building/Room 2/Props rm2" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.09866, -1.43179, 3.1862 )
+physics_material_override = SubResource( 46 )
+gravity_scale = 0.2
+
+[node name="seat mesh" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable chair 8"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.27, 0 )
+mesh = SubResource( 38 )
+material/0 = SubResource( 41 )
+
+[node name="seat collision" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable chair 8"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.27, 0 )
+shape = SubResource( 42 )
+
+[node name="seatleg mesh 1" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable chair 8"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, -0.15 )
+mesh = SubResource( 43 )
+material/0 = SubResource( 45 )
+
+[node name="seatleg coll 1" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable chair 8"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, -0.15 )
+shape = SubResource( 44 )
+
+[node name="seatleg mesh 2" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable chair 8"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, 0.15 )
+mesh = SubResource( 43 )
+material/0 = SubResource( 45 )
+
+[node name="seatleg coll 2" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable chair 8"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, 0.15 )
+shape = SubResource( 44 )
+
+[node name="seatleg mesh 3" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable chair 8"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, 0.15 )
+mesh = SubResource( 43 )
+material/0 = SubResource( 45 )
+
+[node name="seatleg coll 3" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable chair 8"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, 0.15 )
+shape = SubResource( 44 )
+
+[node name="seatleg mesh 4" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable chair 8"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, -0.15 )
+mesh = SubResource( 43 )
+material/0 = SubResource( 45 )
+
+[node name="seatleg coll 4" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable chair 8"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, -0.15 )
+shape = SubResource( 44 )
+
+[node name="Pickable chair 9" parent="Building/Room 2/Props rm2" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.09866, -1.43179, 2.50556 )
+physics_material_override = SubResource( 46 )
+gravity_scale = 0.2
+
+[node name="seat mesh" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable chair 9"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.27, 0 )
+mesh = SubResource( 38 )
+material/0 = SubResource( 41 )
+
+[node name="seat collision" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable chair 9"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.27, 0 )
+shape = SubResource( 42 )
+
+[node name="seatleg mesh 1" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable chair 9"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, -0.15 )
+mesh = SubResource( 43 )
+material/0 = SubResource( 45 )
+
+[node name="seatleg coll 1" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable chair 9"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, -0.15 )
+shape = SubResource( 44 )
+
+[node name="seatleg mesh 2" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable chair 9"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, 0.15 )
+mesh = SubResource( 43 )
+material/0 = SubResource( 45 )
+
+[node name="seatleg coll 2" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable chair 9"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, 0.15 )
+shape = SubResource( 44 )
+
+[node name="seatleg mesh 3" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable chair 9"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, 0.15 )
+mesh = SubResource( 43 )
+material/0 = SubResource( 45 )
+
+[node name="seatleg coll 3" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable chair 9"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, 0.15 )
+shape = SubResource( 44 )
+
+[node name="seatleg mesh 4" type="MeshInstance" parent="Building/Room 2/Props rm2/Pickable chair 9"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, -0.15 )
+mesh = SubResource( 43 )
+material/0 = SubResource( 45 )
+
+[node name="seatleg coll 4" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable chair 9"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, -0.15 )
+shape = SubResource( 44 )
+
+[node name="Pickable mug 1" parent="Building/Room 2/Props rm2" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.51692, -2.56917, -2.19556 )
+physics_material_override = SubResource( 95 )
+gravity_scale = 0.2
+
+[node name="plain_mug" parent="Building/Room 2/Props rm2/Pickable mug 1" instance=ExtResource( 9 )]
+
+[node name="CollisionShape2" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable mug 1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0736011, 0 )
+shape = SubResource( 93 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="Building/Room 2/Props rm2/Pickable mug 1"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.073035, -0.10491 )
+shape = SubResource( 94 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Room 3" type="Spatial" parent="Building"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -32 )
+
+[node name="Floor" type="StaticBody" parent="Building/Room 3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.25, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/Room 3/Floor"]
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/Room 3/Floor"]
+mesh = SubResource( 2 )
+skeleton = NodePath("")
+material/0 = ExtResource( 19 )
+
+[node name="Room 3 maininterior" type="Spatial" parent="Building/Room 3"]
+
+[node name="Ceiling Light" type="OmniLight" parent="Building/Room 3/Room 3 maininterior"]
+light_color = Color( 1, 0.811765, 0.517647, 1 )
+light_energy = 1.44
+light_indirect_energy = 1.44
+light_specular = 0.0
+shadow_enabled = true
+omni_range = 7.0
+
+[node name="Wall E" type="StaticBody" parent="Building/Room 3/Room 3 maininterior"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, -0.75, 0 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/Room 3/Room 3 maininterior/Wall E"]
+mesh = SubResource( 7 )
+material/0 = ExtResource( 17 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/Room 3/Room 3 maininterior/Wall E"]
+shape = SubResource( 9 )
+
+[node name="Wall W" type="StaticBody" parent="Building/Room 3/Room 3 maininterior"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, -0.75, 0 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/Room 3/Room 3 maininterior/Wall W"]
+mesh = SubResource( 7 )
+material/0 = ExtResource( 17 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/Room 3/Room 3 maininterior/Wall W"]
+shape = SubResource( 9 )
+
+[node name="Ceiling" type="StaticBody" parent="Building/Room 3/Room 3 maininterior"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/Room 3/Room 3 maininterior/Ceiling"]
+shape = SubResource( 10 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/Room 3/Room 3 maininterior/Ceiling"]
+mesh = SubResource( 11 )
+
+[node name="Roof" type="StaticBody" parent="Building/Room 3/Room 3 maininterior"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/Room 3/Room 3 maininterior/Roof"]
+mesh = SubResource( 62 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/Room 3/Room 3 maininterior/Roof"]
+shape = SubResource( 63 )
+
+[node name="extra Wall" type="StaticBody" parent="Building/Room 3/Room 3 maininterior"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, -1, 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/Room 3/Room 3 maininterior/extra Wall"]
+mesh = SubResource( 98 )
+material/0 = SubResource( 100 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/Room 3/Room 3 maininterior/extra Wall"]
+shape = SubResource( 99 )
+
+[node name="Wall with doorway" type="Spatial" parent="Building/Room 3"]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0 )
+
+[node name="Wall N 1s" type="StaticBody" parent="Building/Room 3/Wall with doorway"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, -0.75, -5.125 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/Room 3/Wall with doorway/Wall N 1s"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0 )
+mesh = SubResource( 16 )
+material/0 = ExtResource( 17 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/Room 3/Wall with doorway/Wall N 1s"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0 )
+shape = SubResource( 21 )
+
+[node name="Wall N 2s" type="StaticBody" parent="Building/Room 3/Wall with doorway"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, -0.75, -5.125 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/Room 3/Wall with doorway/Wall N 2s"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0 )
+mesh = SubResource( 16 )
+material/0 = ExtResource( 17 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/Room 3/Wall with doorway/Wall N 2s"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0 )
+shape = SubResource( 21 )
+
+[node name="Wall" type="StaticBody" parent="Building/Room 3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.75, -5.125 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/Room 3/Wall"]
+mesh = SubResource( 87 )
+material/0 = ExtResource( 17 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/Room 3/Wall"]
+shape = SubResource( 88 )
+
+[node name="Props rm3" type="Spatial" parent="Building/Room 3"]
+
+[node name="Pickable bottle 1" parent="Building/Room 3/Props rm3" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.79, -1.725, 4.24035 )
+mass = 0.12
+gravity_scale = 0.1
+
+[node name="bottlebottom mesh" type="MeshInstance" parent="Building/Room 3/Props rm3/Pickable bottle 1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0 )
+mesh = SubResource( 51 )
+skeleton = NodePath("")
+material/0 = ExtResource( 18 )
+
+[node name="bottlemid mesh" type="MeshInstance" parent="Building/Room 3/Props rm3/Pickable bottle 1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0 )
+mesh = SubResource( 52 )
+skeleton = NodePath("")
+material/0 = ExtResource( 18 )
+
+[node name="bottlebody mesh" type="CollisionShape" parent="Building/Room 3/Props rm3/Pickable bottle 1"]
+shape = SubResource( 53 )
+
+[node name="bottletop mesh" type="MeshInstance" parent="Building/Room 3/Props rm3/Pickable bottle 1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0 )
+mesh = SubResource( 54 )
+skeleton = NodePath("")
+material/0 = ExtResource( 18 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Building/Room 3/Props rm3/Pickable bottle 1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0 )
+shape = SubResource( 55 )
+
+[node name="Pickable bottle 2" parent="Building/Room 3/Props rm3" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.84566, -1.725, 4.35788 )
+mass = 0.12
+gravity_scale = 0.1
+
+[node name="bottlebottom mesh" type="MeshInstance" parent="Building/Room 3/Props rm3/Pickable bottle 2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0 )
+mesh = SubResource( 51 )
+skeleton = NodePath("")
+material/0 = ExtResource( 18 )
+
+[node name="bottlemid mesh" type="MeshInstance" parent="Building/Room 3/Props rm3/Pickable bottle 2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0 )
+mesh = SubResource( 52 )
+skeleton = NodePath("")
+material/0 = ExtResource( 18 )
+
+[node name="bottlebody mesh" type="CollisionShape" parent="Building/Room 3/Props rm3/Pickable bottle 2"]
+shape = SubResource( 53 )
+
+[node name="bottletop mesh" type="MeshInstance" parent="Building/Room 3/Props rm3/Pickable bottle 2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0 )
+mesh = SubResource( 54 )
+skeleton = NodePath("")
+material/0 = ExtResource( 18 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Building/Room 3/Props rm3/Pickable bottle 2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0 )
+shape = SubResource( 55 )
+
+[node name="Pickable bottle 3" parent="Building/Room 3/Props rm3" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.95737, -1.725, 4.22975 )
+mass = 0.12
+gravity_scale = 0.1
+
+[node name="bottlebottom mesh" type="MeshInstance" parent="Building/Room 3/Props rm3/Pickable bottle 3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0 )
+mesh = SubResource( 51 )
+skeleton = NodePath("")
+material/0 = ExtResource( 18 )
+
+[node name="bottlemid mesh" type="MeshInstance" parent="Building/Room 3/Props rm3/Pickable bottle 3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0 )
+mesh = SubResource( 52 )
+skeleton = NodePath("")
+material/0 = ExtResource( 18 )
+
+[node name="bottlebody mesh" type="CollisionShape" parent="Building/Room 3/Props rm3/Pickable bottle 3"]
+shape = SubResource( 53 )
+
+[node name="bottletop mesh" type="MeshInstance" parent="Building/Room 3/Props rm3/Pickable bottle 3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0 )
+mesh = SubResource( 54 )
+skeleton = NodePath("")
+material/0 = ExtResource( 18 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Building/Room 3/Props rm3/Pickable bottle 3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0 )
+shape = SubResource( 55 )
+
+[node name="Pickable chair 1" parent="Building/Room 3/Props rm3" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.84723, -2.525, 3.74066 )
+physics_material_override = SubResource( 46 )
+gravity_scale = 0.2
+
+[node name="seat mesh" type="MeshInstance" parent="Building/Room 3/Props rm3/Pickable chair 1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.27, 0 )
+mesh = SubResource( 38 )
+material/0 = SubResource( 41 )
+
+[node name="seat collision" type="CollisionShape" parent="Building/Room 3/Props rm3/Pickable chair 1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.27, 0 )
+shape = SubResource( 42 )
+
+[node name="seatleg mesh 1" type="MeshInstance" parent="Building/Room 3/Props rm3/Pickable chair 1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, -0.15 )
+mesh = SubResource( 43 )
+material/0 = SubResource( 45 )
+
+[node name="seatleg coll 1" type="CollisionShape" parent="Building/Room 3/Props rm3/Pickable chair 1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, -0.15 )
+shape = SubResource( 44 )
+
+[node name="seatleg mesh 2" type="MeshInstance" parent="Building/Room 3/Props rm3/Pickable chair 1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, 0.15 )
+mesh = SubResource( 43 )
+material/0 = SubResource( 45 )
+
+[node name="seatleg coll 2" type="CollisionShape" parent="Building/Room 3/Props rm3/Pickable chair 1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, 0.15 )
+shape = SubResource( 44 )
+
+[node name="seatleg mesh 3" type="MeshInstance" parent="Building/Room 3/Props rm3/Pickable chair 1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, 0.15 )
+mesh = SubResource( 43 )
+material/0 = SubResource( 45 )
+
+[node name="seatleg coll 3" type="CollisionShape" parent="Building/Room 3/Props rm3/Pickable chair 1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, 0.15 )
+shape = SubResource( 44 )
+
+[node name="seatleg mesh 4" type="MeshInstance" parent="Building/Room 3/Props rm3/Pickable chair 1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, -0.15 )
+mesh = SubResource( 43 )
+material/0 = SubResource( 45 )
+
+[node name="seatleg coll 4" type="CollisionShape" parent="Building/Room 3/Props rm3/Pickable chair 1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, -0.15 )
+shape = SubResource( 44 )
+
+[node name="Pickable chair 2" parent="Building/Room 3/Props rm3" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.87627, -2.525, -2.48757 )
+physics_material_override = SubResource( 46 )
+gravity_scale = 0.2
+
+[node name="seat mesh" type="MeshInstance" parent="Building/Room 3/Props rm3/Pickable chair 2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.27, 0 )
+mesh = SubResource( 38 )
+material/0 = SubResource( 41 )
+
+[node name="seat collision" type="CollisionShape" parent="Building/Room 3/Props rm3/Pickable chair 2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.27, 0 )
+shape = SubResource( 42 )
+
+[node name="seatleg mesh 1" type="MeshInstance" parent="Building/Room 3/Props rm3/Pickable chair 2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, -0.15 )
+mesh = SubResource( 43 )
+material/0 = SubResource( 45 )
+
+[node name="seatleg coll 1" type="CollisionShape" parent="Building/Room 3/Props rm3/Pickable chair 2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, -0.15 )
+shape = SubResource( 44 )
+
+[node name="seatleg mesh 2" type="MeshInstance" parent="Building/Room 3/Props rm3/Pickable chair 2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, 0.15 )
+mesh = SubResource( 43 )
+material/0 = SubResource( 45 )
+
+[node name="seatleg coll 2" type="CollisionShape" parent="Building/Room 3/Props rm3/Pickable chair 2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, 0.15 )
+shape = SubResource( 44 )
+
+[node name="seatleg mesh 3" type="MeshInstance" parent="Building/Room 3/Props rm3/Pickable chair 2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, 0.15 )
+mesh = SubResource( 43 )
+material/0 = SubResource( 45 )
+
+[node name="seatleg coll 3" type="CollisionShape" parent="Building/Room 3/Props rm3/Pickable chair 2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, 0.15 )
+shape = SubResource( 44 )
+
+[node name="seatleg mesh 4" type="MeshInstance" parent="Building/Room 3/Props rm3/Pickable chair 2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, -0.15 )
+mesh = SubResource( 43 )
+material/0 = SubResource( 45 )
+
+[node name="seatleg coll 4" type="CollisionShape" parent="Building/Room 3/Props rm3/Pickable chair 2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, -0.15 )
+shape = SubResource( 44 )
+
+[node name="Pickable table 1" parent="Building/Room 3/Props rm3" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.63913, -2.35, 4.41706 )
+mass = 17.86
+physics_material_override = SubResource( 37 )
+gravity_scale = 0.3
+
+[node name="tabletopmesh" type="MeshInstance" parent="Building/Room 3/Props rm3/Pickable table 1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.462, 0 )
+mesh = SubResource( 30 )
+material/0 = SubResource( 34 )
+
+[node name="tabletopcollision" type="CollisionShape" parent="Building/Room 3/Props rm3/Pickable table 1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.462, 0 )
+shape = SubResource( 31 )
+
+[node name="tablelegmesh 1" type="MeshInstance" parent="Building/Room 3/Props rm3/Pickable table 1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0 )
+mesh = SubResource( 32 )
+material/0 = SubResource( 35 )
+
+[node name="tablelegcollision 1" type="CollisionShape" parent="Building/Room 3/Props rm3/Pickable table 1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0 )
+shape = SubResource( 33 )
+
+[node name="tablelegmesh 2" type="MeshInstance" parent="Building/Room 3/Props rm3/Pickable table 1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0 )
+mesh = SubResource( 32 )
+material/0 = SubResource( 36 )
+
+[node name="tablelegcollision 2" type="CollisionShape" parent="Building/Room 3/Props rm3/Pickable table 1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0 )
+shape = SubResource( 33 )
+
+[node name="Pickable table 2" parent="Building/Room 3/Props rm3" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.63913, -2.35, 0.964283 )
+mass = 17.86
+physics_material_override = SubResource( 37 )
+gravity_scale = 0.3
+
+[node name="tabletopmesh" type="MeshInstance" parent="Building/Room 3/Props rm3/Pickable table 2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.462, 0 )
+mesh = SubResource( 30 )
+material/0 = SubResource( 34 )
+
+[node name="tabletopcollision" type="CollisionShape" parent="Building/Room 3/Props rm3/Pickable table 2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.462, 0 )
+shape = SubResource( 31 )
+
+[node name="tablelegmesh 1" type="MeshInstance" parent="Building/Room 3/Props rm3/Pickable table 2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0 )
+mesh = SubResource( 32 )
+material/0 = SubResource( 35 )
+
+[node name="tablelegcollision 1" type="CollisionShape" parent="Building/Room 3/Props rm3/Pickable table 2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0 )
+shape = SubResource( 33 )
+
+[node name="tablelegmesh 2" type="MeshInstance" parent="Building/Room 3/Props rm3/Pickable table 2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0 )
+mesh = SubResource( 32 )
+material/0 = SubResource( 36 )
+
+[node name="tablelegcollision 2" type="CollisionShape" parent="Building/Room 3/Props rm3/Pickable table 2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0 )
+shape = SubResource( 33 )
+
+[node name="Pickable table 3" parent="Building/Room 3/Props rm3" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6374, -2.35, -2.38738 )
+mass = 17.86
+physics_material_override = SubResource( 37 )
+gravity_scale = 0.3
+
+[node name="tabletopmesh" type="MeshInstance" parent="Building/Room 3/Props rm3/Pickable table 3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.462, 0 )
+mesh = SubResource( 30 )
+material/0 = SubResource( 34 )
+
+[node name="tabletopcollision" type="CollisionShape" parent="Building/Room 3/Props rm3/Pickable table 3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.462, 0 )
+shape = SubResource( 31 )
+
+[node name="tablelegmesh 1" type="MeshInstance" parent="Building/Room 3/Props rm3/Pickable table 3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0 )
+mesh = SubResource( 32 )
+material/0 = SubResource( 35 )
+
+[node name="tablelegcollision 1" type="CollisionShape" parent="Building/Room 3/Props rm3/Pickable table 3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0 )
+shape = SubResource( 33 )
+
+[node name="tablelegmesh 2" type="MeshInstance" parent="Building/Room 3/Props rm3/Pickable table 3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0 )
+mesh = SubResource( 32 )
+material/0 = SubResource( 36 )
+
+[node name="tablelegcollision 2" type="CollisionShape" parent="Building/Room 3/Props rm3/Pickable table 3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0 )
+shape = SubResource( 33 )
+
+[node name="Pickable table 4" parent="Building/Room 3/Props rm3" instance=ExtResource( 8 )]
+transform = Transform( 0.310428, 0, 0.950597, 0, 1, 0, -0.950597, 0, 0.310428, -2.42626, -2.35, -2.38738 )
+mass = 17.86
+physics_material_override = SubResource( 37 )
+gravity_scale = 0.3
+
+[node name="tabletopmesh" type="MeshInstance" parent="Building/Room 3/Props rm3/Pickable table 4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.462, 0 )
+mesh = SubResource( 30 )
+material/0 = SubResource( 34 )
+
+[node name="tabletopcollision" type="CollisionShape" parent="Building/Room 3/Props rm3/Pickable table 4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.462, 0 )
+shape = SubResource( 31 )
+
+[node name="tablelegmesh 1" type="MeshInstance" parent="Building/Room 3/Props rm3/Pickable table 4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0 )
+mesh = SubResource( 32 )
+material/0 = SubResource( 35 )
+
+[node name="tablelegcollision 1" type="CollisionShape" parent="Building/Room 3/Props rm3/Pickable table 4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0 )
+shape = SubResource( 33 )
+
+[node name="tablelegmesh 2" type="MeshInstance" parent="Building/Room 3/Props rm3/Pickable table 4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0 )
+mesh = SubResource( 32 )
+material/0 = SubResource( 36 )
+
+[node name="tablelegcollision 2" type="CollisionShape" parent="Building/Room 3/Props rm3/Pickable table 4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0 )
+shape = SubResource( 33 )
+
+[node name="Pickable bottle 4" parent="Building/Room 3/Props rm3" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.098371, -2.64753, -0.684666 )
+mass = 0.12
+gravity_scale = 0.1
+
+[node name="bottlebottom mesh" type="MeshInstance" parent="Building/Room 3/Props rm3/Pickable bottle 4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0 )
+mesh = SubResource( 51 )
+skeleton = NodePath("")
+material/0 = ExtResource( 18 )
+
+[node name="bottlemid mesh" type="MeshInstance" parent="Building/Room 3/Props rm3/Pickable bottle 4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0 )
+mesh = SubResource( 52 )
+skeleton = NodePath("")
+material/0 = ExtResource( 18 )
+
+[node name="bottlebody mesh" type="CollisionShape" parent="Building/Room 3/Props rm3/Pickable bottle 4"]
+shape = SubResource( 53 )
+
+[node name="bottletop mesh" type="MeshInstance" parent="Building/Room 3/Props rm3/Pickable bottle 4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0 )
+mesh = SubResource( 54 )
+skeleton = NodePath("")
+material/0 = ExtResource( 18 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Building/Room 3/Props rm3/Pickable bottle 4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0 )
+shape = SubResource( 55 )
+
+[node name="Pickable bottle 5" parent="Building/Room 3/Props rm3" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.026661, -2.64753, -0.635921 )
+mass = 0.12
+gravity_scale = 0.1
+
+[node name="bottlebottom mesh" type="MeshInstance" parent="Building/Room 3/Props rm3/Pickable bottle 5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0 )
+mesh = SubResource( 51 )
+skeleton = NodePath("")
+material/0 = ExtResource( 18 )
+
+[node name="bottlemid mesh" type="MeshInstance" parent="Building/Room 3/Props rm3/Pickable bottle 5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0 )
+mesh = SubResource( 52 )
+skeleton = NodePath("")
+material/0 = ExtResource( 18 )
+
+[node name="bottlebody mesh" type="CollisionShape" parent="Building/Room 3/Props rm3/Pickable bottle 5"]
+shape = SubResource( 53 )
+
+[node name="bottletop mesh" type="MeshInstance" parent="Building/Room 3/Props rm3/Pickable bottle 5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0 )
+mesh = SubResource( 54 )
+skeleton = NodePath("")
+material/0 = ExtResource( 18 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Building/Room 3/Props rm3/Pickable bottle 5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0 )
+shape = SubResource( 55 )
+
+[node name="Pickable bottle 6" parent="Building/Room 3/Props rm3" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0176939, -2.64753, -0.719398 )
+mass = 0.12
+gravity_scale = 0.1
+
+[node name="bottlebottom mesh" type="MeshInstance" parent="Building/Room 3/Props rm3/Pickable bottle 6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0 )
+mesh = SubResource( 51 )
+skeleton = NodePath("")
+material/0 = ExtResource( 18 )
+
+[node name="bottlemid mesh" type="MeshInstance" parent="Building/Room 3/Props rm3/Pickable bottle 6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0 )
+mesh = SubResource( 52 )
+skeleton = NodePath("")
+material/0 = ExtResource( 18 )
+
+[node name="bottlebody mesh" type="CollisionShape" parent="Building/Room 3/Props rm3/Pickable bottle 6"]
+shape = SubResource( 53 )
+
+[node name="bottletop mesh" type="MeshInstance" parent="Building/Room 3/Props rm3/Pickable bottle 6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0 )
+mesh = SubResource( 54 )
+skeleton = NodePath("")
+material/0 = ExtResource( 18 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Building/Room 3/Props rm3/Pickable bottle 6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0 )
+shape = SubResource( 55 )
+
+[node name="Pickable bottle 7" parent="Building/Room 3/Props rm3" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0537447, -2.64753, -0.667583 )
+mass = 0.12
+gravity_scale = 0.1
+
+[node name="bottlebottom mesh" type="MeshInstance" parent="Building/Room 3/Props rm3/Pickable bottle 7"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0 )
+mesh = SubResource( 51 )
+skeleton = NodePath("")
+material/0 = ExtResource( 18 )
+
+[node name="bottlemid mesh" type="MeshInstance" parent="Building/Room 3/Props rm3/Pickable bottle 7"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0 )
+mesh = SubResource( 52 )
+skeleton = NodePath("")
+material/0 = ExtResource( 18 )
+
+[node name="bottlebody mesh" type="CollisionShape" parent="Building/Room 3/Props rm3/Pickable bottle 7"]
+shape = SubResource( 53 )
+
+[node name="bottletop mesh" type="MeshInstance" parent="Building/Room 3/Props rm3/Pickable bottle 7"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0 )
+mesh = SubResource( 54 )
+skeleton = NodePath("")
+material/0 = ExtResource( 18 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Building/Room 3/Props rm3/Pickable bottle 7"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0 )
+shape = SubResource( 55 )
+
+[node name="Pickable bottle 8" parent="Building/Room 3/Props rm3" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.144456, -2.64753, -0.684666 )
+mass = 0.12
+gravity_scale = 0.1
+
+[node name="bottlebottom mesh" type="MeshInstance" parent="Building/Room 3/Props rm3/Pickable bottle 8"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0 )
+mesh = SubResource( 51 )
+skeleton = NodePath("")
+material/0 = ExtResource( 18 )
+
+[node name="bottlemid mesh" type="MeshInstance" parent="Building/Room 3/Props rm3/Pickable bottle 8"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0 )
+mesh = SubResource( 52 )
+skeleton = NodePath("")
+material/0 = ExtResource( 18 )
+
+[node name="bottlebody mesh" type="CollisionShape" parent="Building/Room 3/Props rm3/Pickable bottle 8"]
+shape = SubResource( 53 )
+
+[node name="bottletop mesh" type="MeshInstance" parent="Building/Room 3/Props rm3/Pickable bottle 8"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0 )
+mesh = SubResource( 54 )
+skeleton = NodePath("")
+material/0 = ExtResource( 18 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Building/Room 3/Props rm3/Pickable bottle 8"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0 )
+shape = SubResource( 55 )
+
+[node name="Pickable bottle 9" parent="Building/Room 3/Props rm3" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.216166, -2.64753, -0.635921 )
+mass = 0.12
+gravity_scale = 0.1
+
+[node name="bottlebottom mesh" type="MeshInstance" parent="Building/Room 3/Props rm3/Pickable bottle 9"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0 )
+mesh = SubResource( 51 )
+skeleton = NodePath("")
+material/0 = ExtResource( 18 )
+
+[node name="bottlemid mesh" type="MeshInstance" parent="Building/Room 3/Props rm3/Pickable bottle 9"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0 )
+mesh = SubResource( 52 )
+skeleton = NodePath("")
+material/0 = ExtResource( 18 )
+
+[node name="bottlebody mesh" type="CollisionShape" parent="Building/Room 3/Props rm3/Pickable bottle 9"]
+shape = SubResource( 53 )
+
+[node name="bottletop mesh" type="MeshInstance" parent="Building/Room 3/Props rm3/Pickable bottle 9"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0 )
+mesh = SubResource( 54 )
+skeleton = NodePath("")
+material/0 = ExtResource( 18 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Building/Room 3/Props rm3/Pickable bottle 9"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0 )
+shape = SubResource( 55 )
+
+[node name="Pickable bottle 10" parent="Building/Room 3/Props rm3" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.225133, -2.64753, -0.719398 )
+mass = 0.12
+gravity_scale = 0.1
+
+[node name="bottlebottom mesh" type="MeshInstance" parent="Building/Room 3/Props rm3/Pickable bottle 10"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0 )
+mesh = SubResource( 51 )
+skeleton = NodePath("")
+material/0 = ExtResource( 18 )
+
+[node name="bottlemid mesh" type="MeshInstance" parent="Building/Room 3/Props rm3/Pickable bottle 10"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0 )
+mesh = SubResource( 52 )
+skeleton = NodePath("")
+material/0 = ExtResource( 18 )
+
+[node name="bottlebody mesh" type="CollisionShape" parent="Building/Room 3/Props rm3/Pickable bottle 10"]
+shape = SubResource( 53 )
+
+[node name="bottletop mesh" type="MeshInstance" parent="Building/Room 3/Props rm3/Pickable bottle 10"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0 )
+mesh = SubResource( 54 )
+skeleton = NodePath("")
+material/0 = ExtResource( 18 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Building/Room 3/Props rm3/Pickable bottle 10"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0 )
+shape = SubResource( 55 )
+
+[node name="Pickable bottle 11" parent="Building/Room 3/Props rm3" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.296572, -2.64753, -0.667583 )
+mass = 0.12
+gravity_scale = 0.1
+
+[node name="bottlebottom mesh" type="MeshInstance" parent="Building/Room 3/Props rm3/Pickable bottle 11"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0 )
+mesh = SubResource( 51 )
+skeleton = NodePath("")
+material/0 = ExtResource( 18 )
+
+[node name="bottlemid mesh" type="MeshInstance" parent="Building/Room 3/Props rm3/Pickable bottle 11"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0 )
+mesh = SubResource( 52 )
+skeleton = NodePath("")
+material/0 = ExtResource( 18 )
+
+[node name="bottlebody mesh" type="CollisionShape" parent="Building/Room 3/Props rm3/Pickable bottle 11"]
+shape = SubResource( 53 )
+
+[node name="bottletop mesh" type="MeshInstance" parent="Building/Room 3/Props rm3/Pickable bottle 11"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0 )
+mesh = SubResource( 54 )
+skeleton = NodePath("")
+material/0 = ExtResource( 18 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Building/Room 3/Props rm3/Pickable bottle 11"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0 )
+shape = SubResource( 55 )
+
+[node name="Pickable bottle 12" parent="Building/Room 3/Props rm3" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0357983, -2.64753, -0.567539 )
+mass = 0.12
+gravity_scale = 0.1
+
+[node name="bottlebottom mesh" type="MeshInstance" parent="Building/Room 3/Props rm3/Pickable bottle 12"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0 )
+mesh = SubResource( 51 )
+skeleton = NodePath("")
+material/0 = ExtResource( 18 )
+
+[node name="bottlemid mesh" type="MeshInstance" parent="Building/Room 3/Props rm3/Pickable bottle 12"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0 )
+mesh = SubResource( 52 )
+skeleton = NodePath("")
+material/0 = ExtResource( 18 )
+
+[node name="bottlebody mesh" type="CollisionShape" parent="Building/Room 3/Props rm3/Pickable bottle 12"]
+shape = SubResource( 53 )
+
+[node name="bottletop mesh" type="MeshInstance" parent="Building/Room 3/Props rm3/Pickable bottle 12"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0 )
+mesh = SubResource( 54 )
+skeleton = NodePath("")
+material/0 = ExtResource( 18 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Building/Room 3/Props rm3/Pickable bottle 12"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0 )
+shape = SubResource( 55 )
+
+[node name="Pickable bottle 13" parent="Building/Room 3/Props rm3" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.107508, -2.64753, -0.518795 )
+mass = 0.12
+gravity_scale = 0.1
+
+[node name="bottlebottom mesh" type="MeshInstance" parent="Building/Room 3/Props rm3/Pickable bottle 13"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0 )
+mesh = SubResource( 51 )
+skeleton = NodePath("")
+material/0 = ExtResource( 18 )
+
+[node name="bottlemid mesh" type="MeshInstance" parent="Building/Room 3/Props rm3/Pickable bottle 13"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0 )
+mesh = SubResource( 52 )
+skeleton = NodePath("")
+material/0 = ExtResource( 18 )
+
+[node name="bottlebody mesh" type="CollisionShape" parent="Building/Room 3/Props rm3/Pickable bottle 13"]
+shape = SubResource( 53 )
+
+[node name="bottletop mesh" type="MeshInstance" parent="Building/Room 3/Props rm3/Pickable bottle 13"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0 )
+mesh = SubResource( 54 )
+skeleton = NodePath("")
+material/0 = ExtResource( 18 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Building/Room 3/Props rm3/Pickable bottle 13"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0 )
+shape = SubResource( 55 )
+
+[node name="Pickable bottle 14" parent="Building/Room 3/Props rm3" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.116475, -2.64753, -0.602272 )
+mass = 0.12
+gravity_scale = 0.1
+
+[node name="bottlebottom mesh" type="MeshInstance" parent="Building/Room 3/Props rm3/Pickable bottle 14"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0 )
+mesh = SubResource( 51 )
+skeleton = NodePath("")
+material/0 = ExtResource( 18 )
+
+[node name="bottlemid mesh" type="MeshInstance" parent="Building/Room 3/Props rm3/Pickable bottle 14"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0 )
+mesh = SubResource( 52 )
+skeleton = NodePath("")
+material/0 = ExtResource( 18 )
+
+[node name="bottlebody mesh" type="CollisionShape" parent="Building/Room 3/Props rm3/Pickable bottle 14"]
+shape = SubResource( 53 )
+
+[node name="bottletop mesh" type="MeshInstance" parent="Building/Room 3/Props rm3/Pickable bottle 14"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0 )
+mesh = SubResource( 54 )
+skeleton = NodePath("")
+material/0 = ExtResource( 18 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Building/Room 3/Props rm3/Pickable bottle 14"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0 )
+shape = SubResource( 55 )
+
+[node name="Pickable bottle 15" parent="Building/Room 3/Props rm3" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.187914, -2.64753, -0.550457 )
+mass = 0.12
+gravity_scale = 0.1
+
+[node name="bottlebottom mesh" type="MeshInstance" parent="Building/Room 3/Props rm3/Pickable bottle 15"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0 )
+mesh = SubResource( 51 )
+skeleton = NodePath("")
+material/0 = ExtResource( 18 )
+
+[node name="bottlemid mesh" type="MeshInstance" parent="Building/Room 3/Props rm3/Pickable bottle 15"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0 )
+mesh = SubResource( 52 )
+skeleton = NodePath("")
+material/0 = ExtResource( 18 )
+
+[node name="bottlebody mesh" type="CollisionShape" parent="Building/Room 3/Props rm3/Pickable bottle 15"]
+shape = SubResource( 53 )
+
+[node name="bottletop mesh" type="MeshInstance" parent="Building/Room 3/Props rm3/Pickable bottle 15"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0 )
+mesh = SubResource( 54 )
+skeleton = NodePath("")
+material/0 = ExtResource( 18 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Building/Room 3/Props rm3/Pickable bottle 15"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0 )
+shape = SubResource( 55 )
+
+[node name="Pickable ball 1" parent="Building/Room 3/Props rm3" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.18906, -2.247, -3.904 )
+mass = 0.131633
+physics_material_override = SubResource( 29 )
+gravity_scale = 0.1
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/Room 3/Props rm3/Pickable ball 1"]
+mesh = SubResource( 25 )
+skeleton = NodePath("")
+material/0 = SubResource( 28 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Building/Room 3/Props rm3/Pickable ball 1"]
+shape = SubResource( 26 )
+
+[node name="Pickable ball 2" parent="Building/Room 3/Props rm3" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.05937, -2.247, -3.31881 )
+mass = 0.131633
+physics_material_override = SubResource( 29 )
+gravity_scale = 0.1
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/Room 3/Props rm3/Pickable ball 2"]
+mesh = SubResource( 25 )
+skeleton = NodePath("")
+material/0 = SubResource( 28 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Building/Room 3/Props rm3/Pickable ball 2"]
+shape = SubResource( 26 )
+
+[node name="Pickable bowlball" parent="Building/Room 3/Props rm3" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.29016, -2.5181, -4.15897 )
+mass = 109.72
+physics_material_override = SubResource( 96 )
+gravity_scale = 0.7
+
+[node name="bowling_ball" parent="Building/Room 3/Props rm3/Pickable bowlball" instance=ExtResource( 14 )]
+transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Building/Room 3/Props rm3/Pickable bowlball"]
+shape = SubResource( 97 )
+
+[node name="Hallway" type="Spatial" parent="Building"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -16 )
+
+[node name="Floor" type="StaticBody" parent="Building/Hallway"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.25, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/Hallway/Floor"]
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/Hallway/Floor"]
+mesh = SubResource( 2 )
+skeleton = NodePath("")
+material/0 = ExtResource( 19 )
+
+[node name="Walls" type="Spatial" parent="Building/Hallway"]
+
+[node name="Wall1" type="StaticBody" parent="Building/Hallway/Walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.25, -0.75, 6.25 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/Hallway/Walls/Wall1"]
+mesh = SubResource( 79 )
+material/0 = ExtResource( 17 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/Hallway/Walls/Wall1"]
+shape = SubResource( 80 )
+
+[node name="Wall2" type="StaticBody" parent="Building/Hallway/Walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25, -0.75, 6.25 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/Hallway/Walls/Wall2"]
+mesh = SubResource( 79 )
+material/0 = ExtResource( 17 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/Hallway/Walls/Wall2"]
+shape = SubResource( 80 )
+
+[node name="Wall3" type="StaticBody" parent="Building/Hallway/Walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.25, -0.75, -6.25 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/Hallway/Walls/Wall3"]
+mesh = SubResource( 79 )
+material/0 = ExtResource( 17 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/Hallway/Walls/Wall3"]
+shape = SubResource( 80 )
+
+[node name="Wall4" type="StaticBody" parent="Building/Hallway/Walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25, -0.75, -6.25 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/Hallway/Walls/Wall4"]
+mesh = SubResource( 79 )
+material/0 = ExtResource( 17 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/Hallway/Walls/Wall4"]
+shape = SubResource( 80 )
+
+[node name="Wall5" type="StaticBody" parent="Building/Hallway/Walls"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6.25, -0.75, -1.25 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/Hallway/Walls/Wall5"]
+mesh = SubResource( 79 )
+material/0 = ExtResource( 17 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/Hallway/Walls/Wall5"]
+shape = SubResource( 80 )
+
+[node name="Wall6" type="StaticBody" parent="Building/Hallway/Walls"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6.25, -0.75, 1.25 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/Hallway/Walls/Wall6"]
+mesh = SubResource( 79 )
+material/0 = ExtResource( 17 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/Hallway/Walls/Wall6"]
+shape = SubResource( 80 )
+
+[node name="Wall7" type="StaticBody" parent="Building/Hallway/Walls"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.25, -0.75, -1.25 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/Hallway/Walls/Wall7"]
+mesh = SubResource( 79 )
+material/0 = ExtResource( 17 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/Hallway/Walls/Wall7"]
+shape = SubResource( 80 )
+
+[node name="Wall8" type="StaticBody" parent="Building/Hallway/Walls"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.25, -0.75, 1.25 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/Hallway/Walls/Wall8"]
+mesh = SubResource( 79 )
+material/0 = ExtResource( 17 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/Hallway/Walls/Wall8"]
+shape = SubResource( 80 )
+
+[node name="Pillar1" type="StaticBody" parent="Building/Hallway/Walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.375, -0.75, 1.375 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/Hallway/Walls/Pillar1"]
+shape = SubResource( 81 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/Hallway/Walls/Pillar1"]
+mesh = SubResource( 82 )
+
+[node name="Pillar2" type="StaticBody" parent="Building/Hallway/Walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.375, -0.75, 1.375 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/Hallway/Walls/Pillar2"]
+shape = SubResource( 81 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/Hallway/Walls/Pillar2"]
+mesh = SubResource( 82 )
+
+[node name="Pillar3" type="StaticBody" parent="Building/Hallway/Walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.375, -0.75, -1.375 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/Hallway/Walls/Pillar3"]
+shape = SubResource( 81 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/Hallway/Walls/Pillar3"]
+mesh = SubResource( 82 )
+
+[node name="Pillar4" type="StaticBody" parent="Building/Hallway/Walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.375, -0.75, -1.375 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/Hallway/Walls/Pillar4"]
+shape = SubResource( 81 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/Hallway/Walls/Pillar4"]
+mesh = SubResource( 82 )
+
+[node name="Roof1" type="StaticBody" parent="Building/Hallway"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 6.25 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/Hallway/Roof1"]
+mesh = SubResource( 83 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/Hallway/Roof1"]
+shape = SubResource( 84 )
+
+[node name="Roof2" type="StaticBody" parent="Building/Hallway"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -6.25 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/Hallway/Roof2"]
+mesh = SubResource( 83 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/Hallway/Roof2"]
+shape = SubResource( 84 )
+
+[node name="Roof3" type="StaticBody" parent="Building/Hallway"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6.25, 1.5, 0 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/Hallway/Roof3"]
+mesh = SubResource( 83 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/Hallway/Roof3"]
+shape = SubResource( 84 )
+
+[node name="Roof4" type="StaticBody" parent="Building/Hallway"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.25, 1.5, 9.53674e-07 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Building/Hallway/Roof4"]
+mesh = SubResource( 83 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Building/Hallway/Roof4"]
+shape = SubResource( 84 )
+
+[node name="AllSkyFree_AnotherPlanet" parent="." instance=ExtResource( 11 )]
+
+[editable path="Building/FPController"]
