@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=2]
+[gd_scene load_steps=75 format=2]
 
 [ext_resource path="res://Scenes/Savon/materials/02ca4834c9a7d45c85769e5d66e3998e.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Savon/textures/8475901.jpg" type="Texture" id=2]
@@ -18,6 +18,7 @@
 [ext_resource path="res://Scenes/Savon/textures/wall.material" type="Material" id=16]
 [ext_resource path="res://Scenes/Savon/textures/brick_pattern black.jpg" type="Texture" id=17]
 [ext_resource path="res://Scenes/Savon/source/ambient music.mp3" type="AudioStream" id=18]
+[ext_resource path="res://Scenes/Savon/endgame.gd" type="Script" id=19]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 30, 1, 30 )
@@ -180,6 +181,30 @@ size = Vector3( 10, 20, 1 )
 albedo_texture = ExtResource( 17 )
 uv1_scale = Vector3( 0.2, 0.2, 0.24 )
 uv1_triplanar = true
+
+[sub_resource type="BoxShape" id=85]
+extents = Vector3( 1, 2.5, 0.25 )
+
+[sub_resource type="CubeMesh" id=86]
+size = Vector3( 2, 5, 0.5 )
+
+[sub_resource type="SpatialMaterial" id=87]
+emission_enabled = true
+emission = Color( 1, 1, 1, 1 )
+emission_energy = 1.09
+emission_operator = 0
+emission_on_uv2 = false
+transmission_enabled = true
+transmission = Color( 1, 1, 1, 1 )
+
+[sub_resource type="BoxShape" id=88]
+extents = Vector3( 1, 2.45948, 1 )
+
+[sub_resource type="BoxShape" id=89]
+extents = Vector3( 1, 2.5, 0.25 )
+
+[sub_resource type="CubeMesh" id=90]
+size = Vector3( 2, 5, 0.5 )
 
 [node name="Menu" type="Node"]
 
@@ -973,5 +998,72 @@ omni_range = 12.8839
 stream = ExtResource( 18 )
 volume_db = -24.084
 autoplay = true
+
+[node name="eXIT DOOR" type="StaticBody" parent="."]
+transform = Transform( 2.31593, 0, 0, 0, 1, 0, 0, 0, 1, -3.32371, 1.85675, -297.84 )
+
+[node name="CollisionShape" type="CollisionShape" parent="eXIT DOOR"]
+shape = SubResource( 85 )
+
+[node name="MeshInstance" type="MeshInstance" parent="eXIT DOOR"]
+mesh = SubResource( 86 )
+material/0 = SubResource( 87 )
+
+[node name="OmniLight" type="OmniLight" parent="eXIT DOOR/MeshInstance"]
+light_energy = 16.0
+light_indirect_energy = 2.422
+omni_range = 43.864
+
+[node name="Exit" type="Area" parent="eXIT DOOR"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.64227 )
+collision_layer = 0
+collision_mask = 524288
+script = ExtResource( 19 )
+
+[node name="CollisionShape" type="CollisionShape" parent="eXIT DOOR/Exit"]
+shape = SubResource( 88 )
+
+[node name="Hallway" type="StaticBody" parent="."]
+transform = Transform( 0.0448341, -0.0099666, -1.48866, 0.00159198, 0.96174, -0.0063909, 15.8344, -0.0230409, 0.47704, -0.801272, 1.85675, -282.286 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Hallway"]
+shape = SubResource( 89 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Hallway"]
+mesh = SubResource( 90 )
+material/0 = ExtResource( 16 )
+
+[node name="Hallway3" type="StaticBody" parent="."]
+transform = Transform( 0.0314578, -1.06317, 5.35013e-08, -7.24814e-11, -4.20521e-08, -1.10755, 15.8344, 0.00172945, -9.21004e-11, -3.35618, 4.4824, -282.286 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Hallway3"]
+transform = Transform( 1, 0, -8.67362e-19, 1.86265e-09, 1, 1.98119e-15, -2.22045e-16, 1.59867e-15, 1, 0, 0, 0 )
+shape = SubResource( 89 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Hallway3"]
+mesh = SubResource( 90 )
+material/0 = ExtResource( 16 )
+
+[node name="Hallway4" type="StaticBody" parent="."]
+transform = Transform( 0.0326894, -1.10479, 5.55958e-08, -5.11075, -0.000558202, 0.000374338, -0.0166057, -1.8558e-06, -1.10916, -3.09268, 9.69241, -267.595 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Hallway4"]
+shape = SubResource( 89 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Hallway4"]
+mesh = SubResource( 90 )
+material/0 = ExtResource( 16 )
+
+[node name="Hallway2" type="StaticBody" parent="."]
+transform = Transform( 0.24788, -0.00767742, -1.0936, 0.00159198, 0.96174, -0.0063909, 15.8329, -0.0229567, 0.48932, -5.69011, 1.85675, -282.286 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Hallway2"]
+shape = SubResource( 89 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Hallway2"]
+mesh = SubResource( 90 )
+material/0 = ExtResource( 16 )
+
+[connection signal="body_entered" from="eXIT DOOR/Exit" to="eXIT DOOR/Exit" method="_on_Area_body_entered"]
 
 [editable path="FPController"]
