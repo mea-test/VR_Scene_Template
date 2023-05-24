@@ -386,6 +386,7 @@ run/main_scene="res://Scenes/DonaldoScene.tscn"
 [autoload]
 
 XRToolsUserSettings="*res://addons/godot-xr-tools/user_settings/user_settings.gd"
+GlobalAudioStreamPlayer="*res://DonaldoScenes/AudioStreamPlayer.tscn"
 
 [editor_plugins]
 
