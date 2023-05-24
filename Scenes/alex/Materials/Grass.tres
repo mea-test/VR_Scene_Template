@@ -1,0 +1,15 @@
+[gd_resource type="SpatialMaterial" load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/alex/Textures/Scene_-_Root_normal.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/alex/Textures/Scene_-_Root_diffuse.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/alex/Textures/Scene_-_Root_specularGlossiness.png" type="Texture" id=3]
+
+[resource]
+albedo_texture = ExtResource( 2 )
+metallic_texture = ExtResource( 3 )
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = ExtResource( 1 )
+uv1_scale = Vector3( 0.01, 0.01, 0.01 )
+uv1_triplanar = true
+uv1_triplanar_sharpness = 1.31951
